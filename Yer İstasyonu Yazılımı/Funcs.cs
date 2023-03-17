@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -49,5 +51,10 @@ namespace Yer_İstasyonu_Yazılımı
                                                                                      }
                                                                                      return dt;
                                                                                  });
+        public static GMarkerGoogle AddMarker(double lat, double lon)
+        {
+            GMarkerGoogle marker = new GMarkerGoogle(new GMap.NET.PointLatLng(lat, lon),GMarkerGoogleType.blue_pushpin);
+            return marker;
+        }
     }
 }

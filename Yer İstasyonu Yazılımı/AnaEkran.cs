@@ -4,8 +4,11 @@ using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GMap.NET;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
+using GMap.NET.WindowsForms.Markers;
+using GMap.NET.WindowsForms;
 
 namespace Yer_İstasyonu_Yazılımı
 {
@@ -15,17 +18,16 @@ namespace Yer_İstasyonu_Yazılımı
         {
             InitializeComponent();
         }
-
+        double lat=30, lng=25;
         private void AnaEkran_Load(object sender, EventArgs e)
         {
 
             Funcs.TabloDuzen(dataGridView1);
             glControl.Invalidate();
-            timerX.Interval = 100;
+            timerX.Interval = 1000;
             timerX.Start();
             timerGraphs.Interval = 1000;
             timerGraphs.Start();
-
         }
 
         int movem;
@@ -445,6 +447,30 @@ namespace Yer_İstasyonu_Yazılımı
                 step += topla;
             }
             GL.End();
+        }
+
+        private GMarkerGoogle marker;
+
+        private void timerMap_Tick(object sender, EventArgs e)
+        {
+            marker.Position = new PointLatLng(marker.Position.Lat + 0.051, marker.Position.Lng + 0.051);
+            gMap.Position = new PointLatLng(marker.Position.Lat + 0.051, marker.Position.Lng + 0.051);
+        }
+
+        private void gMap_Load(object sender, EventArgs e)
+        {
+            GMaps.Instance.Mode = AccessMode.ServerAndCache;
+            gMap.MapProvider = GMap.NET.MapProviders.GoogleKoreaSatelliteMapProvider.Instance;
+            gMap.Position = new PointLatLng(39.921033, 32.852894);
+            gMap.MinZoom = 1;
+            gMap.MaxZoom = 15;
+            gMap.Zoom = 8;
+            marker = Funcs.AddMarker(lat, lng);
+            GMapOverlay gMapOverlay = new GMapOverlay();
+            gMapOverlay.Markers.Add(marker);
+            gMap.Overlays.Add(gMapOverlay);
+            timerMap.Interval = 1000;
+            timerMap.Start();
         }
 
         private void Propeller(float yukseklik, float uzunluk, float kalinlik, float egiklik)
