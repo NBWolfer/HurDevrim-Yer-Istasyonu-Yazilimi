@@ -243,29 +243,6 @@ namespace Yer_İstasyonu_Yazılımı
                     chart1.ResetAutoValues(); // Grafiği otomatik olarak yeniden boyutlandırın ve ayarlayın
                 }));
             });
-            //Random random = new Random();
-            //double temperature = random.Next(0, 100); // Rastgele bir sıcaklık değeri üretin
-            //int dataCount = chart1.Series[0].Points.Count;
-            //int interval = 1;
-
-            //if (dataCount > 10)
-            //{
-            //    interval = 5;
-            //}
-            //if (dataCount > 50)
-            //{
-            //    interval = 10;
-            //}
-            //if (dataCount > 100)
-            //{
-            //    interval = 30;
-            //}
-
-            //chart1.ChartAreas[0].AxisX.Interval = interval;
-
-            //chart1.Series[0].Points.AddXY(time++,temperature); // Veriyi grafiğe ekle
-            //chart1.Invalidate();
-            //chart1.ResetAutoValues(); // Grafiği otomatik olarak yeniden boyutlandırın ve ayarlayın
         }
 
         private void Cylinder(float step, float topla, float radius, float dikey1, float dikey2)
