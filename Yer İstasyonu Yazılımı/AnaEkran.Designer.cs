@@ -47,7 +47,8 @@
             this.btnTestSim = new System.Windows.Forms.Button();
             this.glControl = new OpenTK.GLControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.cmBPorts = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBandRate = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,11 +79,11 @@
             // 
             this.tabPage2.Controls.Add(this.chart1);
             this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1972, 1197);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(1477, 970);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Grafikler";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -93,15 +94,14 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(19, 20);
-            this.chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chart1.Location = new System.Drawing.Point(14, 16);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(575, 502);
+            this.chart1.Size = new System.Drawing.Size(431, 408);
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
             // 
@@ -109,10 +109,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(803, 20);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(602, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(292, 26);
+            this.label2.Size = new System.Drawing.Size(242, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Daha sonra port ile yapılacak";
             // 
@@ -123,11 +122,11 @@
             this.tabPage1.Controls.Add(this.lblPaketNum);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1972, 1197);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(1477, 970);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Genel";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -135,10 +134,10 @@
             // csvload
             // 
             this.csvload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.csvload.Location = new System.Drawing.Point(19, 946);
-            this.csvload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.csvload.Location = new System.Drawing.Point(14, 769);
+            this.csvload.Margin = new System.Windows.Forms.Padding(2);
             this.csvload.Name = "csvload";
-            this.csvload.Size = new System.Drawing.Size(171, 44);
+            this.csvload.Size = new System.Drawing.Size(128, 36);
             this.csvload.TabIndex = 13;
             this.csvload.Text = ".csv yükle";
             this.csvload.UseVisualStyleBackColor = true;
@@ -147,10 +146,10 @@
             // csvSave
             // 
             this.csvSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.csvSave.Location = new System.Drawing.Point(19, 885);
-            this.csvSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.csvSave.Location = new System.Drawing.Point(14, 719);
+            this.csvSave.Margin = new System.Windows.Forms.Padding(2);
             this.csvSave.Name = "csvSave";
-            this.csvSave.Size = new System.Drawing.Size(171, 44);
+            this.csvSave.Size = new System.Drawing.Size(128, 36);
             this.csvSave.TabIndex = 12;
             this.csvSave.Text = ".csv kaydet";
             this.csvSave.UseVisualStyleBackColor = true;
@@ -160,10 +159,9 @@
             // 
             this.lblPaketNum.AutoSize = true;
             this.lblPaketNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblPaketNum.Location = new System.Drawing.Point(267, 809);
-            this.lblPaketNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPaketNum.Location = new System.Drawing.Point(200, 657);
             this.lblPaketNum.Name = "lblPaketNum";
-            this.lblPaketNum.Size = new System.Drawing.Size(24, 26);
+            this.lblPaketNum.Size = new System.Drawing.Size(20, 22);
             this.lblPaketNum.TabIndex = 2;
             this.lblPaketNum.Text = "0";
             // 
@@ -171,10 +169,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(13, 809);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(10, 657);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(223, 26);
+            this.label7.Size = new System.Drawing.Size(184, 22);
             this.label7.TabIndex = 1;
             this.label7.Text = "Toplam Paket Sayısı :";
             // 
@@ -188,8 +185,7 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 18);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 15);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -199,7 +195,7 @@
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1932, 736);
+            this.dataGridView1.Size = new System.Drawing.Size(1449, 598);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabControl1
@@ -208,32 +204,31 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(15, 90);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl1.Location = new System.Drawing.Point(11, 73);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1980, 1226);
+            this.tabControl1.Size = new System.Drawing.Size(1485, 996);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.btnTestSim);
             this.tabPage3.Controls.Add(this.glControl);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(1972, 1197);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Size = new System.Drawing.Size(1477, 970);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Durum";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnTestSim
             // 
-            this.btnTestSim.Location = new System.Drawing.Point(749, 43);
-            this.btnTestSim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTestSim.Location = new System.Drawing.Point(562, 35);
             this.btnTestSim.Name = "btnTestSim";
-            this.btnTestSim.Size = new System.Drawing.Size(100, 28);
+            this.btnTestSim.Size = new System.Drawing.Size(75, 23);
             this.btnTestSim.TabIndex = 1;
             this.btnTestSim.Text = "Test";
             this.btnTestSim.UseVisualStyleBackColor = true;
@@ -242,10 +237,10 @@
             // glControl
             // 
             this.glControl.BackColor = System.Drawing.Color.LightBlue;
-            this.glControl.Location = new System.Drawing.Point(21, 23);
-            this.glControl.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.glControl.Location = new System.Drawing.Point(16, 19);
+            this.glControl.Margin = new System.Windows.Forms.Padding(4);
             this.glControl.Name = "glControl";
-            this.glControl.Size = new System.Drawing.Size(679, 843);
+            this.glControl.Size = new System.Drawing.Size(509, 685);
             this.glControl.TabIndex = 0;
             this.glControl.VSync = false;
             this.glControl.Load += new System.EventHandler(this.glControl_Load);
@@ -253,57 +248,67 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.comboBox1);
+            this.tabPage4.Controls.Add(this.listBox1);
+            this.tabPage4.Controls.Add(this.cmBPorts);
             this.tabPage4.Controls.Add(this.label3);
             this.tabPage4.Controls.Add(this.txtBandRate);
             this.tabPage4.Controls.Add(this.label1);
             this.tabPage4.Controls.Add(this.Port);
             this.tabPage4.Controls.Add(this.connectCom);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage4.Size = new System.Drawing.Size(1972, 1197);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage4.Size = new System.Drawing.Size(1477, 970);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Seçenekler";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // listBox1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(152, 101);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(171, 39);
-            this.comboBox1.TabIndex = 13;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(340, 53);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(421, 420);
+            this.listBox1.TabIndex = 14;
+            // 
+            // cmBPorts
+            // 
+            this.cmBPorts.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmBPorts.FormattingEnabled = true;
+            this.cmBPorts.Location = new System.Drawing.Point(114, 82);
+            this.cmBPorts.Name = "cmBPorts";
+            this.cmBPorts.Size = new System.Drawing.Size(129, 33);
+            this.cmBPorts.TabIndex = 13;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(1083, 53);
+            this.label3.Location = new System.Drawing.Point(812, 43);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 25);
+            this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 12;
             this.label3.Text = "Takım Bilgileri:";
             // 
             // txtBandRate
             // 
             this.txtBandRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtBandRate.Location = new System.Drawing.Point(152, 44);
-            this.txtBandRate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBandRate.Location = new System.Drawing.Point(114, 36);
+            this.txtBandRate.Margin = new System.Windows.Forms.Padding(2);
             this.txtBandRate.Name = "txtBandRate";
-            this.txtBandRate.Size = new System.Drawing.Size(171, 38);
+            this.txtBandRate.Size = new System.Drawing.Size(129, 32);
             this.txtBandRate.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(23, 53);
+            this.label1.Location = new System.Drawing.Point(17, 43);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 25);
+            this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Band Rate :";
             // 
@@ -311,21 +316,23 @@
             // 
             this.Port.AutoSize = true;
             this.Port.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Port.Location = new System.Drawing.Point(87, 110);
+            this.Port.Location = new System.Drawing.Point(65, 89);
+            this.Port.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Port.Name = "Port";
-            this.Port.Size = new System.Drawing.Size(58, 25);
+            this.Port.Size = new System.Drawing.Size(46, 20);
             this.Port.TabIndex = 5;
             this.Port.Text = "Port :";
             // 
             // connectCom
             // 
-            this.connectCom.Location = new System.Drawing.Point(153, 182);
-            this.connectCom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.connectCom.Location = new System.Drawing.Point(115, 148);
+            this.connectCom.Margin = new System.Windows.Forms.Padding(2);
             this.connectCom.Name = "connectCom";
-            this.connectCom.Size = new System.Drawing.Size(171, 44);
+            this.connectCom.Size = new System.Drawing.Size(128, 36);
             this.connectCom.TabIndex = 4;
             this.connectCom.Text = "Bağlan";
             this.connectCom.UseVisualStyleBackColor = true;
+            this.connectCom.Click += new System.EventHandler(this.connectCom_Click);
             // 
             // panel1
             // 
@@ -334,9 +341,8 @@
             this.panel1.Controls.Add(this.btnQuit);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2571, 54);
+            this.panel1.Size = new System.Drawing.Size(1928, 44);
             this.panel1.TabIndex = 1;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -348,10 +354,9 @@
             this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnMinimize.Location = new System.Drawing.Point(2387, 11);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMinimize.Location = new System.Drawing.Point(1790, 9);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(81, 33);
+            this.btnMinimize.Size = new System.Drawing.Size(61, 27);
             this.btnMinimize.TabIndex = 3;
             this.btnMinimize.Text = "Küçült";
             this.btnMinimize.UseVisualStyleBackColor = true;
@@ -363,10 +368,9 @@
             this.btnQuit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
             this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnQuit.Location = new System.Drawing.Point(2489, 11);
-            this.btnQuit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuit.Location = new System.Drawing.Point(1867, 9);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(56, 33);
+            this.btnQuit.Size = new System.Drawing.Size(42, 27);
             this.btnQuit.TabIndex = 2;
             this.btnQuit.Text = "Çık";
             this.btnQuit.UseVisualStyleBackColor = true;
@@ -376,10 +380,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(15, 11);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(11, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(414, 32);
+            this.label4.Size = new System.Drawing.Size(332, 25);
             this.label4.TabIndex = 0;
             this.label4.Text = "HürDevrim Yer İstasyonu Yazılımı";
             // 
@@ -387,9 +390,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(2235, 230);
+            this.label5.Location = new System.Drawing.Point(1676, 187);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 25);
+            this.label5.Size = new System.Drawing.Size(64, 20);
             this.label5.TabIndex = 8;
             this.label5.Text = "Kamera";
             // 
@@ -400,6 +404,10 @@
             // openFileD
             // 
             this.openFileD.FileName = "openFileD";
+            // 
+            // serialPort
+            // 
+            this.serialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort_DataReceived);
             // 
             // timerGraphs
             // 
@@ -413,8 +421,8 @@
             this.gMap.GrayScaleMode = false;
             this.gMap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMap.LevelsKeepInMemory = 5;
-            this.gMap.Location = new System.Drawing.Point(2000, 809);
-            this.gMap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gMap.Location = new System.Drawing.Point(1500, 657);
+            this.gMap.Margin = new System.Windows.Forms.Padding(2);
             this.gMap.MarkersEnabled = true;
             this.gMap.MaxZoom = 2;
             this.gMap.MinZoom = 2;
@@ -428,7 +436,7 @@
             this.gMap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMap.ShowTileGridLines = false;
-            this.gMap.Size = new System.Drawing.Size(544, 507);
+            this.gMap.Size = new System.Drawing.Size(408, 412);
             this.gMap.TabIndex = 10;
             this.gMap.TabStop = false;
             this.gMap.Zoom = 0D;
@@ -440,10 +448,10 @@
             // 
             // AnaEkran
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(2560, 1329);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.gMap);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
@@ -451,7 +459,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AnaEkran";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HürDevrim";
@@ -496,7 +504,7 @@
         private System.Windows.Forms.Label lblPaketNum;
         private System.Windows.Forms.Button csvload;
         private System.Windows.Forms.Button csvSave;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmBPorts;
         private System.Windows.Forms.Button btnTestSim;
         private System.Windows.Forms.Timer timerX;
         private System.Windows.Forms.OpenFileDialog openFileD;
@@ -506,6 +514,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private GMap.NET.WindowsForms.GMapControl gMap;
         private System.Windows.Forms.Timer timerMap;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

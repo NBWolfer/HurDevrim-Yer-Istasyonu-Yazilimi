@@ -9,11 +9,14 @@ using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms;
+using System.IO.Ports;
 
 namespace Yer_İstasyonu_Yazılımı
 {
     public partial class AnaEkran : Form
     {
+        private string[] ports = SerialPort.GetPortNames();
+        private string portname;
         public AnaEkran()
         {
             InitializeComponent();
@@ -28,6 +31,14 @@ namespace Yer_İstasyonu_Yazılımı
             timerX.Start();
             timerGraphs.Interval = 1000;
             timerGraphs.Start();
+            listBox1.Items.Clear();
+
+            foreach(string port in ports)
+            {
+                cmBPorts.Items.Add(port);
+            }
+
+
         }
 
         int movem;
@@ -211,7 +222,7 @@ namespace Yer_İstasyonu_Yazılımı
                 index++;
             }
         }
-        public int time = 0;
+        int time = 0;
         private async void timerGraphs_Tick(object sender, EventArgs e)
         {
             await Task.Run(() =>
@@ -432,6 +443,37 @@ namespace Yer_İstasyonu_Yazılımı
         {
             marker.Position = new PointLatLng(marker.Position.Lat + 0.051, marker.Position.Lng + 0.051);
             gMap.Position = new PointLatLng(marker.Position.Lat + 0.051, marker.Position.Lng + 0.051);
+        }
+
+        private async void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            await Task.Run(() =>
+            {
+                string data="";
+                try
+                {
+                    data = serialPort.ReadLine();
+                }
+                catch {
+                    listBox1.Items.Add("Error");
+                }
+                Invoke(new Action(() =>
+                {
+                    listBox1.Items.Add(data);
+                }));
+            });
+        }
+
+        private void connectCom_Click(object sender, EventArgs e)
+        {
+            serialPort.PortName = cmBPorts.Text; // seri portun adı
+            serialPort.BaudRate = 9600; // baud rate
+            serialPort.Parity = Parity.None; // parity ayarı
+            serialPort.DataBits = 8; // data bits
+            serialPort.StopBits = StopBits.One; // stop bits
+            serialPort.DataReceived += new SerialDataReceivedEventHandler(serialPort_DataReceived);
+            serialPort.Open();
+            listBox1.Items.Add("Bağlandı");
         }
 
         private void gMap_Load(object sender, EventArgs e)
