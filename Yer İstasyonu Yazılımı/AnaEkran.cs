@@ -20,13 +20,12 @@ namespace Yer_İstasyonu_Yazılımı
         {
             InitializeComponent();
         }
-        double lat=30, lng=25;
+        
         private void AnaEkran_Load(object sender, EventArgs e)
         {
-
             Funcs.TabloDuzen(dataGridView1);
             glControl.Invalidate();
-            timerX.Interval = 1000;
+            timerX.Interval = 1000; // buradaki timer lar seriport fonksiyonunun içine yerleşecek
             timerX.Start();
             timerGraphs.Interval = 1000;
             timerGraphs.Start();
@@ -38,7 +37,6 @@ namespace Yer_İstasyonu_Yazılımı
             {
                 cmBPorts.Items.Add(port);
             }
-
         }
 
         // Top-Side Creation
@@ -141,7 +139,7 @@ namespace Yer_İstasyonu_Yazılımı
         }
 
         // Graphs/Charts
-        int time = 1;
+        int time = 0;
         private async void timerGraphs_Tick(object sender, EventArgs e)
         {
             await Task.Run(() =>
@@ -180,6 +178,39 @@ namespace Yer_İstasyonu_Yazılımı
                     chBatteryVolt.Series[0].Points.AddXY(time, r.Next(0, 12)); // Funcs.parameters[11]);
                     chBatteryVolt.Invalidate();
                     chBatteryVolt.ResetAutoValues();
+                }));
+                chPressure.Invoke(new Action(() =>
+                {
+                    chPressure.ChartAreas[0].AxisX.Interval = interval;
+
+                    chPressure.Series[0].Points.AddXY(time, r.Next(700, 900));
+                    chPressure.Series[1].Points.AddXY(time, r.Next(700, 900));
+                    chPressure.Invalidate();
+                    chPressure.ResetAutoValues();
+                }));
+                chTempurature.Invoke(new Action(() =>
+                {
+                    chTempurature.ChartAreas[0].AxisX2.Interval = interval;
+
+                    chTempurature.Series[0].Points.AddXY(time, r.Next(25, 35));
+                    chTempurature.Invalidate();
+                    chTempurature.ResetAutoValues();
+                }));
+                chSpeed.Invoke(new Action(() =>
+                {
+                    chSpeed.ChartAreas[0].AxisY.Interval = interval;
+
+                    chSpeed.Series[0].Points.AddXY(time, r.Next(0, 25));
+                    chSpeed.Invalidate();
+                    chSpeed.ResetAutoValues();
+                }));
+                chPackageNum.Invoke(new Action(() =>
+                {
+                    chPackageNum.ChartAreas[0].AxisX2.Interval = interval;
+
+                    chPackageNum.Series[0].Points.AddXY(time, time);
+                    chPackageNum.Invalidate();
+                    chPackageNum.ResetAutoValues();
                 }));
             });
         }
@@ -502,8 +533,18 @@ namespace Yer_İstasyonu_Yazılımı
             serialPort.Open();
             listBox1.Items.Add("Bağlandı");
         }
-        
+        private void btnPortScan_Click(object sender, EventArgs e)
+        {
+            ports = SerialPort.GetPortNames();
+
+            foreach (string port in ports)
+            {
+                cmBPorts.Items.Add(port);
+            }
+        }
+
         // Map
+        double lat = 30, lng = 25;
         private GMarkerGoogle marker;
         private void gMap_Load(object sender, EventArgs e)
         {
@@ -523,7 +564,5 @@ namespace Yer_İstasyonu_Yazılımı
             marker.Position = new PointLatLng(marker.Position.Lat + 0.051, marker.Position.Lng + 0.051);
             gMap.Position = new PointLatLng(marker.Position.Lat + 0.051, marker.Position.Lng + 0.051);
         }
-
-
     }
 }

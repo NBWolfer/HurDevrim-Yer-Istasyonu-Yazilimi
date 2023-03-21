@@ -15,12 +15,14 @@ namespace Yer_İstasyonu_Yazılımı
             string[] parts = headers.Split(new char[] { '<', '>', ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
             string[] output = parts.Select(p => p.Trim()).ToArray();
             int index = 0;
+            parameters = output;
             dgw.ColumnCount = output.Length;
             foreach (string item in output)
             {
                     dgw.Columns[index++].HeaderText = item;
             }
         }
+
         public static string[] parameters;
         public static void AddRow(DataGridView dgw, string param)
         {
