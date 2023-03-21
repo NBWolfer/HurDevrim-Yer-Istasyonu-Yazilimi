@@ -21,6 +21,21 @@ namespace Yer_İstasyonu_Yazılımı
                     dgw.Columns[index++].HeaderText = item;
             }
         }
+        public static string[] parameters;
+        public static void AddRow(DataGridView dgw, string param)
+        {
+            DataGridViewRow dgvr = new DataGridViewRow();
+
+            string[] parts = param.Split(new char[] { '<', '>', ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] outputs = parts.Select(p => p.Trim()).ToArray();
+            int index = 0;
+            parameters = outputs;
+            foreach (string item in outputs)
+            {
+                dgvr.Cells[index++].Value = item;
+            }
+            dgw.Rows.Add(dgvr);
+        }
         public async static Task<DataTable> ReadCSV(string filePath) => await Task.Run(() =>
                                                                                  {
                                                                                      DataTable dt = new DataTable();

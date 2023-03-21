@@ -15,8 +15,7 @@ namespace Yer_İstasyonu_Yazılımı
 {
     public partial class AnaEkran : Form
     {
-        private string[] ports = SerialPort.GetPortNames();
-        private string portname;
+
         public AnaEkran()
         {
             InitializeComponent();
@@ -31,6 +30,8 @@ namespace Yer_İstasyonu_Yazılımı
             timerX.Start();
             timerGraphs.Interval = 1000;
             timerGraphs.Start();
+            timerMap.Interval = 1000;
+            timerMap.Start();
             listBox1.Items.Clear();
 
             foreach(string port in ports)
@@ -38,25 +39,22 @@ namespace Yer_İstasyonu_Yazılımı
                 cmBPorts.Items.Add(port);
             }
 
-
         }
 
+        // Top-Side Creation
         int movem;
         int Mouse_x;
         int Mouse_y;
-
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             movem = 0;
         }
-
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             movem = 1;
             Mouse_x = e.X;
             Mouse_y = e.Y;
         }
-
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if(movem == 1)
@@ -64,20 +62,129 @@ namespace Yer_İstasyonu_Yazılımı
                 this.SetDesktopLocation(MousePosition.X-Mouse_x, MousePosition.Y-Mouse_y);
             }
         }
-
         private void btnQuit_Click(object sender, EventArgs e)
         {
             this.Close();
             Application.Exit();
         }
-        
-
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
+        // Parameters Table CSV Processes
+        private void csvSave_Click(object sender, EventArgs e)
+        {
+            string CsvFpath = @"C:\Users\Mahmut Enes\Desktop\Coding\C#\Yer İstasyonu Yazılımı\output.csv";
+            try
+            {
+                StreamWriter csvFileWriter = new StreamWriter(CsvFpath, false);
 
+                string columnHeaderText = "";
+
+                int countColumn = dataGridView1.ColumnCount - 1;
+
+                if (countColumn >= 0)
+                {
+                    columnHeaderText = dataGridView1.Columns[0].HeaderText;
+                }
+
+                for (int i = 1; i <= countColumn; i++)
+                {
+                    columnHeaderText = columnHeaderText + ',' + dataGridView1.Columns[i].HeaderText;
+                }
+
+
+                csvFileWriter.WriteLine(columnHeaderText);
+
+                foreach (DataGridViewRow dataRowObject in dataGridView1.Rows)
+                {
+                    if (!dataRowObject.IsNewRow)
+                    {
+                        string dataFromGrid = "";
+
+                        dataFromGrid = dataRowObject.Cells[0].Value.ToString();
+
+                        for (int i = 0; i <= countColumn; i++)
+                        {
+                            if (dataRowObject.Cells[i].Value != null)
+                            {
+                                dataFromGrid = dataFromGrid + ',' + dataRowObject.Cells[i].Value.ToString();
+                            }
+                        }
+                        csvFileWriter.WriteLine(dataFromGrid);
+                    }
+                }
+
+
+                csvFileWriter.Flush();
+                csvFileWriter.Close();
+                MessageBox.Show("Dosya "+CsvFpath+" konumuna kaydedildi.");
+            }
+            catch (Exception exceptionObject)
+            {
+                MessageBox.Show(exceptionObject.ToString());
+            }
+        }
+        private async void csvload_Click(object sender, EventArgs e)
+        {
+            openFileD.ShowDialog();
+            DataTable dt = await Funcs.ReadCSV(openFileD.FileName);
+            int index = 0;
+            foreach(DataRow row in dt.Rows)
+            {
+                dataGridView1.Rows.Add();
+                for(int i = 0; i < dataGridView1.Columns.Count;i++)
+                    dataGridView1.Rows[index].Cells[i].Value = row[i].ToString();
+                index++;
+            }
+        }
+
+        // Graphs/Charts
+        int time = 1;
+        private async void timerGraphs_Tick(object sender, EventArgs e)
+        {
+            await Task.Run(() =>
+            {
+                int dataCount = chAltidute.Series[0].Points.Count;
+                Random r = new Random();
+                int temp = r.Next(0, 100);
+                int interval = 1;
+                time++;
+                if (dataCount > 10)
+                {
+                    interval = 5;
+                }
+                if (dataCount > 50)
+                {
+                    interval = 10;
+                }
+                if (dataCount > 100)
+                {
+                    interval = 30;
+                }
+
+                chAltidute.Invoke(new Action(() =>
+                {
+                    chAltidute.ChartAreas[0].AxisX.Interval = interval;
+
+                    chAltidute.Series[0].Points.AddXY(time, r.Next(0, 100)); //Funcs.parameters[6]); // Veriyi grafiğe ekle
+                    chAltidute.Series[1].Points.AddXY(time, r.Next(0, 100)); //Funcs.parameters[7]); // Veriyi grafiğe ekle
+                    chAltidute.Invalidate();
+                    chAltidute.ResetAutoValues(); // Grafiği otomatik olarak yeniden boyutlandırın ve ayarlayın
+                }));
+                chBatteryVolt.Invoke(new Action(() =>
+                {
+                    chBatteryVolt.ChartAreas[0].AxisY.Interval = interval;
+
+                    chBatteryVolt.Series[0].Points.AddXY(time, r.Next(0, 12)); // Funcs.parameters[11]);
+                    chBatteryVolt.Invalidate();
+                    chBatteryVolt.ResetAutoValues();
+                }));
+            });
+        }
+
+        // Simulation Drawing
         float x = 0, y = 0, z = 0;
         private void glControl_Paint(object sender, PaintEventArgs e)
         {
@@ -130,132 +237,11 @@ namespace Yer_İstasyonu_Yazılımı
             //GraphicsContext.CurrentContext.VSync = true;
             glControl.SwapBuffers();
         }
-
-        private void btnTestSim_Click(object sender, EventArgs e)
+        private void glControl_Load(object sender, EventArgs e)
         {
-            x = 0;
-            y = 20;
-            z = 0;
-            glControl.Invalidate();
-            timerX.Start();
+            GL.ClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+            GL.Enable(EnableCap.DepthTest);
         }
-
-        private async void timerX_Tick(object sender, EventArgs e)
-        {
-            await Task.Run(() => { 
-                if (z < 180)
-                {
-                    z += 1;
-                }
-                else
-                {
-                    z = 0;
-                }
-                glControl.Invalidate();
-            });
-        }
-
-        private void csvSave_Click(object sender, EventArgs e)
-        {
-            string CsvFpath = @"C:\Users\Mahmut Enes\Desktop\Coding\C#\Yer İstasyonu Yazılımı\output.csv";
-            try
-            {
-                System.IO.StreamWriter csvFileWriter = new StreamWriter(CsvFpath, false);
-
-                string columnHeaderText = "";
-
-                int countColumn = dataGridView1.ColumnCount - 1;
-
-                if (countColumn >= 0)
-                {
-                    columnHeaderText = dataGridView1.Columns[0].HeaderText;
-                }
-
-                for (int i = 1; i <= countColumn; i++)
-                {
-                    columnHeaderText = columnHeaderText + ',' + dataGridView1.Columns[i].HeaderText;
-                }
-
-
-                csvFileWriter.WriteLine(columnHeaderText);
-
-                foreach (DataGridViewRow dataRowObject in dataGridView1.Rows)
-                {
-                    if (!dataRowObject.IsNewRow)
-                    {
-                        string dataFromGrid = "";
-
-                        dataFromGrid = dataRowObject.Cells[0].Value.ToString();
-
-                        for (int i = 0; i <= countColumn; i++)
-                        {
-                            if (dataRowObject.Cells[i].Value != null)
-                            {
-                                dataFromGrid = dataFromGrid + ',' + dataRowObject.Cells[i].Value.ToString();
-                            }
-                        }
-                        csvFileWriter.WriteLine(dataFromGrid);
-                    }
-                }
-
-
-                csvFileWriter.Flush();
-                csvFileWriter.Close();
-                MessageBox.Show("Dosya "+CsvFpath+" konumuna kaydedildi.");
-            }
-            catch (Exception exceptionObject)
-            {
-                MessageBox.Show(exceptionObject.ToString());
-            }
-        }
-
-        private async void csvload_Click(object sender, EventArgs e)
-        {
-            openFileD.ShowDialog();
-            DataTable dt = await Funcs.ReadCSV(openFileD.FileName);
-            int index = 0;
-            foreach(DataRow row in dt.Rows)
-            {
-                dataGridView1.Rows.Add();
-                for(int i = 0; i < dataGridView1.Columns.Count;i++)
-                    dataGridView1.Rows[index].Cells[i].Value = row[i].ToString();
-                index++;
-            }
-        }
-        int time = 0;
-        private async void timerGraphs_Tick(object sender, EventArgs e)
-        {
-            await Task.Run(() =>
-            {
-                Random random = new Random();
-                double temperature = random.Next(0, 100); // Rastgele bir sıcaklık değeri üretin
-                int dataCount = chart1.Series[0].Points.Count;
-                int interval = 1;
-
-                if (dataCount > 10)
-                {
-                    interval = 5;
-                }
-                if (dataCount > 50)
-                {
-                    interval = 10;
-                }
-                if (dataCount > 100)
-                {
-                    interval = 30;
-                }
-
-                chart1.Invoke(new Action(() =>
-                {
-                    chart1.ChartAreas[0].AxisX.Interval = interval;
-
-                    chart1.Series[0].Points.AddXY(time++, temperature); // Veriyi grafiğe ekle
-                    chart1.Invalidate();
-                    chart1.ResetAutoValues(); // Grafiği otomatik olarak yeniden boyutlandırın ve ayarlayın
-                }));
-            });
-        }
-
         private void Cylinder(float step, float topla, float radius, float dikey1, float dikey2)
         {
             float eski_step = 0.1f;
@@ -363,7 +349,36 @@ namespace Yer_İstasyonu_Yazılımı
             }
             GL.End();
         }
+        private void Propeller(float yukseklik, float uzunluk, float kalinlik, float egiklik)
+        {
+            GL.Begin(BeginMode.Quads);
 
+            GL.Color3(Color.Red);
+            GL.Vertex3(uzunluk, yukseklik, kalinlik);
+            GL.Vertex3(uzunluk, yukseklik + egiklik, -kalinlik);
+            GL.Vertex3(0.0, yukseklik + egiklik, -kalinlik);
+            GL.Vertex3(0.0, yukseklik, kalinlik);
+
+            GL.Color3(Color.Red);
+            GL.Vertex3(-uzunluk, yukseklik + egiklik, kalinlik);
+            GL.Vertex3(-uzunluk, yukseklik, -kalinlik);
+            GL.Vertex3(0.0, yukseklik, -kalinlik);
+            GL.Vertex3(0.0, yukseklik + egiklik, kalinlik);
+
+            GL.Color3(Color.White);
+            GL.Vertex3(kalinlik, yukseklik, -uzunluk);
+            GL.Vertex3(-kalinlik, yukseklik + egiklik, -uzunluk);
+            GL.Vertex3(-kalinlik, yukseklik + egiklik, 0.0);//+
+            GL.Vertex3(kalinlik, yukseklik, 0.0);//-
+
+            GL.Color3(Color.White);
+            GL.Vertex3(kalinlik, yukseklik + egiklik, +uzunluk);
+            GL.Vertex3(-kalinlik, yukseklik, +uzunluk);
+            GL.Vertex3(-kalinlik, yukseklik, 0.0);
+            GL.Vertex3(kalinlik, yukseklik + egiklik, 0.0);
+            GL.End();
+
+        }
         private void Cone(float step, float topla, float radius1, float radius2, float dikey1, float dikey2)
         {
             float eski_step = 0.1f;
@@ -436,38 +451,50 @@ namespace Yer_İstasyonu_Yazılımı
             }
             GL.End();
         }
-
-        private GMarkerGoogle marker;
-
-        private void timerMap_Tick(object sender, EventArgs e)
+        private async void timerX_Tick(object sender, EventArgs e)
         {
-            marker.Position = new PointLatLng(marker.Position.Lat + 0.051, marker.Position.Lng + 0.051);
-            gMap.Position = new PointLatLng(marker.Position.Lat + 0.051, marker.Position.Lng + 0.051);
+            await Task.Run(() => { 
+                if (z < 180)
+                {
+                    z += 1;
+                }
+                else
+                {
+                    z = 0;
+                }
+                glControl.Invalidate();
+            });
         }
 
-        private async void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        // Serial Port
+        private string[] ports = SerialPort.GetPortNames();
+        private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            await Task.Run(() =>
-            {
+           
                 string data="";
                 try
                 {
                     data = serialPort.ReadLine();
+
                 }
                 catch {
-                    listBox1.Items.Add("Error");
+                    MessageBox.Show("Veri alma/işleme hatası !","Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                 Invoke(new Action(() =>
                 {
                     listBox1.Items.Add(data);
+                    Funcs.AddRow(dataGridView1, data);
                 }));
-            });
         }
-
         private void connectCom_Click(object sender, EventArgs e)
         {
+            if (serialPort.IsOpen)
+            {
+                serialPort.Close();
+
+            }
             serialPort.PortName = cmBPorts.Text; // seri portun adı
-            serialPort.BaudRate = 9600; // baud rate
+            serialPort.BaudRate = 9600; //Convert.ToInt32(txtBandRate.Text); // baud rate
             serialPort.Parity = Parity.None; // parity ayarı
             serialPort.DataBits = 8; // data bits
             serialPort.StopBits = StopBits.One; // stop bits
@@ -475,7 +502,9 @@ namespace Yer_İstasyonu_Yazılımı
             serialPort.Open();
             listBox1.Items.Add("Bağlandı");
         }
-
+        
+        // Map
+        private GMarkerGoogle marker;
         private void gMap_Load(object sender, EventArgs e)
         {
             GMaps.Instance.Mode = AccessMode.ServerAndCache;
@@ -488,45 +517,13 @@ namespace Yer_İstasyonu_Yazılımı
             GMapOverlay gMapOverlay = new GMapOverlay();
             gMapOverlay.Markers.Add(marker);
             gMap.Overlays.Add(gMapOverlay);
-            timerMap.Interval = 1000;
-            timerMap.Start();
         }
-
-        private void Propeller(float yukseklik, float uzunluk, float kalinlik, float egiklik)
+        private void timerMap_Tick(object sender, EventArgs e)
         {
-            GL.Begin(BeginMode.Quads);
-
-            GL.Color3(Color.Red);
-            GL.Vertex3(uzunluk, yukseklik, kalinlik);
-            GL.Vertex3(uzunluk, yukseklik + egiklik, -kalinlik);
-            GL.Vertex3(0.0, yukseklik + egiklik, -kalinlik);
-            GL.Vertex3(0.0, yukseklik, kalinlik);
-
-            GL.Color3(Color.Red);
-            GL.Vertex3(-uzunluk, yukseklik + egiklik, kalinlik);
-            GL.Vertex3(-uzunluk, yukseklik, -kalinlik);
-            GL.Vertex3(0.0, yukseklik, -kalinlik);
-            GL.Vertex3(0.0, yukseklik + egiklik, kalinlik);
-
-            GL.Color3(Color.White);
-            GL.Vertex3(kalinlik, yukseklik, -uzunluk);
-            GL.Vertex3(-kalinlik, yukseklik + egiklik, -uzunluk);
-            GL.Vertex3(-kalinlik, yukseklik + egiklik, 0.0);//+
-            GL.Vertex3(kalinlik, yukseklik, 0.0);//-
-
-            GL.Color3(Color.White);
-            GL.Vertex3(kalinlik, yukseklik + egiklik, +uzunluk);
-            GL.Vertex3(-kalinlik, yukseklik, +uzunluk);
-            GL.Vertex3(-kalinlik, yukseklik, 0.0);
-            GL.Vertex3(kalinlik, yukseklik + egiklik, 0.0);
-            GL.End();
-
+            marker.Position = new PointLatLng(marker.Position.Lat + 0.051, marker.Position.Lng + 0.051);
+            gMap.Position = new PointLatLng(marker.Position.Lat + 0.051, marker.Position.Lng + 0.051);
         }
 
-        private void glControl_Load(object sender, EventArgs e)
-        {
-            GL.ClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-            GL.Enable(EnableCap.DepthTest);
-        }
+
     }
 }

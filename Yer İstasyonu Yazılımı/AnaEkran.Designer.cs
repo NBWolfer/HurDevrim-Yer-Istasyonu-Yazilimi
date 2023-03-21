@@ -32,10 +32,38 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaEkran));
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label2 = new System.Windows.Forms.Label();
+            this.ch = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chSpeed = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chTempurature = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chBatteryVolt = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chPressure = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chAltidute = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.csvload = new System.Windows.Forms.Button();
             this.csvSave = new System.Windows.Forms.Button();
@@ -44,7 +72,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnTestSim = new System.Windows.Forms.Button();
             this.glControl = new OpenTK.GLControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -58,15 +85,20 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.timerX = new System.Windows.Forms.Timer(this.components);
             this.openFileD = new System.Windows.Forms.OpenFileDialog();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.timerGraphs = new System.Windows.Forms.Timer(this.components);
             this.gMap = new GMap.NET.WindowsForms.GMapControl();
             this.timerMap = new System.Windows.Forms.Timer(this.components);
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chTempurature)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chBatteryVolt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chPressure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chAltidute)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -77,43 +109,185 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.chart1);
-            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.ch);
+            this.tabPage2.Controls.Add(this.chSpeed);
+            this.tabPage2.Controls.Add(this.chTempurature);
+            this.tabPage2.Controls.Add(this.chBatteryVolt);
+            this.tabPage2.Controls.Add(this.chPressure);
+            this.tabPage2.Controls.Add(this.chAltidute);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Size = new System.Drawing.Size(1477, 970);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Grafikler";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // chart1
+            // ch
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.ch.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(14, 16);
-            this.chart1.Name = "chart1";
+            this.ch.Legends.Add(legend1);
+            this.ch.Location = new System.Drawing.Point(1010, 508);
+            this.ch.Name = "ch";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(431, 408);
-            this.chart1.TabIndex = 2;
-            this.chart1.Text = "chart1";
+            series1.LegendText = "Görev Yükü";
+            series1.Name = "seriesPayload";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series2.Legend = "Legend1";
+            series2.LegendText = "Taşıyıcı";
+            series2.Name = "seriesCarrier";
+            this.ch.Series.Add(series1);
+            this.ch.Series.Add(series2);
+            this.ch.Size = new System.Drawing.Size(440, 408);
+            this.ch.TabIndex = 7;
+            this.ch.Text = "chart2";
+            title1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title1.Name = "Title1";
+            title1.Text = "Basınç";
+            this.ch.Titles.Add(title1);
             // 
-            // label2
+            // chSpeed
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(602, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(242, 22);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Daha sonra port ile yapılacak";
+            chartArea2.Name = "ChartArea1";
+            this.chSpeed.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chSpeed.Legends.Add(legend2);
+            this.chSpeed.Location = new System.Drawing.Point(526, 508);
+            this.chSpeed.Name = "chSpeed";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series3.Legend = "Legend1";
+            series3.LegendText = "Görev Yükü";
+            series3.Name = "seriesPayload";
+            this.chSpeed.Series.Add(series3);
+            this.chSpeed.Size = new System.Drawing.Size(443, 408);
+            this.chSpeed.TabIndex = 6;
+            this.chSpeed.Text = "chart2";
+            title2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title2.Name = "Title1";
+            title2.Text = "İniş Hızı";
+            this.chSpeed.Titles.Add(title2);
+            // 
+            // chTempurature
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chTempurature.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chTempurature.Legends.Add(legend3);
+            this.chTempurature.Location = new System.Drawing.Point(14, 508);
+            this.chTempurature.Name = "chTempurature";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series4.Legend = "Legend1";
+            series4.LegendText = "Görev Yükü";
+            series4.Name = "seriesPayload";
+            this.chTempurature.Series.Add(series4);
+            this.chTempurature.Size = new System.Drawing.Size(454, 408);
+            this.chTempurature.TabIndex = 5;
+            this.chTempurature.Text = "chart2";
+            title3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title3.Name = "Title1";
+            title3.Text = "Sıcaklık";
+            this.chTempurature.Titles.Add(title3);
+            // 
+            // chBatteryVolt
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.chBatteryVolt.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chBatteryVolt.Legends.Add(legend4);
+            this.chBatteryVolt.Location = new System.Drawing.Point(1010, 16);
+            this.chBatteryVolt.Name = "chBatteryVolt";
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series5.Legend = "Legend1";
+            series5.LegendText = "Görev Yükü";
+            series5.Name = "seriesPayload";
+            this.chBatteryVolt.Series.Add(series5);
+            this.chBatteryVolt.Size = new System.Drawing.Size(440, 408);
+            this.chBatteryVolt.TabIndex = 4;
+            this.chBatteryVolt.Text = "chart2";
+            title4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title4.Name = "Title1";
+            title4.Text = "Pil Gerilimi";
+            this.chBatteryVolt.Titles.Add(title4);
+            // 
+            // chPressure
+            // 
+            chartArea5.Name = "ChartArea1";
+            this.chPressure.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chPressure.Legends.Add(legend5);
+            this.chPressure.Location = new System.Drawing.Point(526, 16);
+            this.chPressure.Name = "chPressure";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series6.Legend = "Legend1";
+            series6.LegendText = "Görev Yükü";
+            series6.Name = "seriesPayload";
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series7.Legend = "Legend1";
+            series7.LegendText = "Taşıyıcı";
+            series7.Name = "seriesCarrier";
+            this.chPressure.Series.Add(series6);
+            this.chPressure.Series.Add(series7);
+            this.chPressure.Size = new System.Drawing.Size(443, 408);
+            this.chPressure.TabIndex = 3;
+            this.chPressure.Text = "chart2";
+            title5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title5.Name = "Title1";
+            title5.Text = "Basınç";
+            this.chPressure.Titles.Add(title5);
+            // 
+            // chAltidute
+            // 
+            chartArea6.Name = "ChartArea1";
+            this.chAltidute.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chAltidute.Legends.Add(legend6);
+            this.chAltidute.Location = new System.Drawing.Point(14, 16);
+            this.chAltidute.Name = "chAltidute";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series8.Legend = "Legend1";
+            series8.LegendText = "Görev Yükü";
+            series8.Name = "seriesPayload";
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series9.Legend = "Legend1";
+            series9.LegendText = "Taşıyıcı";
+            series9.Name = "seriesCarrier";
+            this.chAltidute.Series.Add(series8);
+            this.chAltidute.Series.Add(series9);
+            this.chAltidute.Size = new System.Drawing.Size(454, 408);
+            this.chAltidute.TabIndex = 2;
+            this.chAltidute.Text = "Yükseklik";
+            title6.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            title6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title6.Name = "Title1";
+            title6.Text = "Yükseklik";
+            this.chAltidute.Titles.Add(title6);
             // 
             // tabPage1
             // 
@@ -123,9 +297,9 @@
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Size = new System.Drawing.Size(1477, 970);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Genel";
@@ -135,7 +309,7 @@
             // 
             this.csvload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.csvload.Location = new System.Drawing.Point(14, 769);
-            this.csvload.Margin = new System.Windows.Forms.Padding(2);
+            this.csvload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.csvload.Name = "csvload";
             this.csvload.Size = new System.Drawing.Size(128, 36);
             this.csvload.TabIndex = 13;
@@ -147,7 +321,7 @@
             // 
             this.csvSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.csvSave.Location = new System.Drawing.Point(14, 719);
-            this.csvSave.Margin = new System.Windows.Forms.Padding(2);
+            this.csvSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.csvSave.Name = "csvSave";
             this.csvSave.Size = new System.Drawing.Size(128, 36);
             this.csvSave.TabIndex = 12;
@@ -205,7 +379,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(11, 73);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1485, 996);
@@ -213,32 +387,21 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.btnTestSim);
             this.tabPage3.Controls.Add(this.glControl);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage3.Size = new System.Drawing.Size(1477, 970);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Durum";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // btnTestSim
-            // 
-            this.btnTestSim.Location = new System.Drawing.Point(562, 35);
-            this.btnTestSim.Name = "btnTestSim";
-            this.btnTestSim.Size = new System.Drawing.Size(75, 23);
-            this.btnTestSim.TabIndex = 1;
-            this.btnTestSim.Text = "Test";
-            this.btnTestSim.UseVisualStyleBackColor = true;
-            this.btnTestSim.Click += new System.EventHandler(this.btnTestSim_Click);
-            // 
             // glControl
             // 
             this.glControl.BackColor = System.Drawing.Color.LightBlue;
             this.glControl.Location = new System.Drawing.Point(16, 19);
-            this.glControl.Margin = new System.Windows.Forms.Padding(4);
+            this.glControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.glControl.Name = "glControl";
             this.glControl.Size = new System.Drawing.Size(509, 685);
             this.glControl.TabIndex = 0;
@@ -256,9 +419,9 @@
             this.tabPage4.Controls.Add(this.Port);
             this.tabPage4.Controls.Add(this.connectCom);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage4.Size = new System.Drawing.Size(1477, 970);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Seçenekler";
@@ -296,7 +459,7 @@
             // 
             this.txtBandRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtBandRate.Location = new System.Drawing.Point(114, 36);
-            this.txtBandRate.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBandRate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBandRate.Name = "txtBandRate";
             this.txtBandRate.Size = new System.Drawing.Size(129, 32);
             this.txtBandRate.TabIndex = 8;
@@ -326,7 +489,7 @@
             // connectCom
             // 
             this.connectCom.Location = new System.Drawing.Point(115, 148);
-            this.connectCom.Margin = new System.Windows.Forms.Padding(2);
+            this.connectCom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.connectCom.Name = "connectCom";
             this.connectCom.Size = new System.Drawing.Size(128, 36);
             this.connectCom.TabIndex = 4;
@@ -386,17 +549,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "HürDevrim Yer İstasyonu Yazılımı";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(1676, 187);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Kamera";
-            // 
             // timerX
             // 
             this.timerX.Tick += new System.EventHandler(this.timerX_Tick);
@@ -422,7 +574,7 @@
             this.gMap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMap.LevelsKeepInMemory = 5;
             this.gMap.Location = new System.Drawing.Point(1500, 657);
-            this.gMap.Margin = new System.Windows.Forms.Padding(2);
+            this.gMap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gMap.MarkersEnabled = true;
             this.gMap.MaxZoom = 2;
             this.gMap.MinZoom = 2;
@@ -446,27 +598,42 @@
             // 
             this.timerMap.Tick += new System.EventHandler(this.timerMap_Tick);
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(1500, 93);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.ScriptErrorsSuppressed = true;
+            this.webBrowser1.Size = new System.Drawing.Size(407, 440);
+            this.webBrowser1.TabIndex = 11;
+            this.webBrowser1.TabStop = false;
+            this.webBrowser1.Url = new System.Uri("http://192.168.0.30/html", System.UriKind.Absolute);
+            // 
             // AnaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.gMap);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AnaEkran";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HürDevrim";
             this.Load += new System.EventHandler(this.AnaEkran_Load);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chTempurature)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chBatteryVolt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chPressure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chAltidute)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -477,7 +644,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -498,23 +664,26 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Button btnMinimize;
-        private System.Windows.Forms.Label label5;
         private OpenTK.GLControl glControl;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblPaketNum;
         private System.Windows.Forms.Button csvload;
         private System.Windows.Forms.Button csvSave;
         private System.Windows.Forms.ComboBox cmBPorts;
-        private System.Windows.Forms.Button btnTestSim;
         private System.Windows.Forms.Timer timerX;
         private System.Windows.Forms.OpenFileDialog openFileD;
         private System.IO.Ports.SerialPort serialPort;
         private System.Windows.Forms.Timer timerGraphs;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chAltidute;
         private GMap.NET.WindowsForms.GMapControl gMap;
         private System.Windows.Forms.Timer timerMap;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chPressure;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ch;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chSpeed;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chTempurature;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chBatteryVolt;
     }
 }
 
