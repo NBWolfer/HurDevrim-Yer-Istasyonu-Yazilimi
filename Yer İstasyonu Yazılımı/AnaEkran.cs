@@ -10,6 +10,9 @@ using OpenTK.Graphics.OpenGL;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms;
 using System.IO.Ports;
+using GMap.NET.MapProviders;
+using System.Threading;
+using System.Text;
 
 namespace Yer_İstasyonu_Yazılımı
 {
@@ -20,22 +23,27 @@ namespace Yer_İstasyonu_Yazılımı
         {
             InitializeComponent();
         }
-        
+        private bool IsConnected = true;
         private void AnaEkran_Load(object sender, EventArgs e)
         {
-            Funcs.TabloDuzen(dataGridView1);
-            glControl.Invalidate();
-            timerX.Interval = 1000; // buradaki timer lar seriport fonksiyonunun içine yerleşecek
-            timerX.Start();
-            timerGraphs.Interval = 1000;
-            timerGraphs.Start();
-            timerMap.Interval = 1000;
-            timerMap.Start();
-            listBox1.Items.Clear();
-
+            //Funcs.TabloDuzen(dataGridView1);
+            TimerTrigger();
             foreach(string port in ports)
             {
                 cmBPorts.Items.Add(port);
+            }
+            listBox1.Items.Add("Bağlı Değil");
+        }
+        private void TimerTrigger()
+        {
+            if (IsConnected)
+            {
+                timerX.Interval = 1000; // buradaki timer lar seriport fonksiyonunun içine yerleşecek
+                timerX.Start();
+                timerGraphs.Interval = 1000;
+                timerGraphs.Start();
+                timerMap.Interval = 1000;
+                timerMap.Start();
             }
         }
 
@@ -71,72 +79,96 @@ namespace Yer_İstasyonu_Yazılımı
         }
 
         // Parameters Table CSV Processes
-        private void csvSave_Click(object sender, EventArgs e)
+        private async void csvSave_Click(object sender, EventArgs e)
         {
-            string CsvFpath = @"C:\Users\Mahmut Enes\Desktop\Coding\C#\Yer İstasyonu Yazılımı\output.csv";
             try
             {
-                StreamWriter csvFileWriter = new StreamWriter(CsvFpath, false);
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "CSV file (*.csv)|*.csv";
+                saveFileDialog1.Title = "Save a CSV File";
 
-                string columnHeaderText = "";
-
-                int countColumn = dataGridView1.ColumnCount - 1;
-
-                if (countColumn >= 0)
+                // Show the file dialog on a separate thread using Task.Run
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    columnHeaderText = dataGridView1.Columns[0].HeaderText;
-                }
-
-                for (int i = 1; i <= countColumn; i++)
-                {
-                    columnHeaderText = columnHeaderText + ',' + dataGridView1.Columns[i].HeaderText;
-                }
-
-
-                csvFileWriter.WriteLine(columnHeaderText);
-
-                foreach (DataGridViewRow dataRowObject in dataGridView1.Rows)
-                {
-                    if (!dataRowObject.IsNewRow)
+                    // Create the file stream to write to the file
+                    StreamWriter sw = new StreamWriter(saveFileDialog1.OpenFile());
+                    for(int i =0; i< dataGridView1.Columns.Count; i++)
                     {
-                        string dataFromGrid = "";
-
-                        dataFromGrid = dataRowObject.Cells[0].Value.ToString();
-
-                        for (int i = 0; i <= countColumn; i++)
-                        {
-                            if (dataRowObject.Cells[i].Value != null)
-                            {
-                                dataFromGrid = dataFromGrid + ',' + dataRowObject.Cells[i].Value.ToString();
-                            }
-                        }
-                        csvFileWriter.WriteLine(dataFromGrid);
+                        sw.Write(dataGridView1.Columns[i].HeaderText);
+                        if(i != dataGridView1.Columns.Count - 1)
+                            sw.Write(',');
                     }
+                    sw.Write('\n');
+                    // Loop through the rows and columns of the DataGridView, writing each cell's value to the file separated by commas
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                        {
+                            sw.Write(dataGridView1.Rows[i].Cells[j].Value);
+
+                            if (j != dataGridView1.Columns.Count - 1)
+                                sw.Write(",");
+                        }
+                        sw.Write("\n");
+                    }
+
+                    // Close the file stream
+                    sw.Close();
+
+                    MessageBox.Show("Dosya kaydedildi.", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-
-                csvFileWriter.Flush();
-                csvFileWriter.Close();
-                MessageBox.Show("Dosya "+CsvFpath+" konumuna kaydedildi.");
             }
             catch (Exception exceptionObject)
             {
-                MessageBox.Show(exceptionObject.ToString());
+                MessageBox.Show("Dosya kaydedilemedi: " + exceptionObject.ToString(), "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private async void csvload_Click(object sender, EventArgs e)
+        private async void csvload_ClickAsync(object sender, EventArgs e)
         {
-            openFileD.ShowDialog();
-            DataTable dt = await Funcs.ReadCSV(openFileD.FileName);
-            int index = 0;
-            foreach(DataRow row in dt.Rows)
+            try
             {
-                dataGridView1.Rows.Add();
-                for(int i = 0; i < dataGridView1.Columns.Count;i++)
-                    dataGridView1.Rows[index].Cells[i].Value = row[i].ToString();
-                index++;
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "CSV Files (*.csv)|*.csv";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (StreamReader reader = new StreamReader(openFileDialog.FileName))
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Locale = new System.Globalization.CultureInfo("tr-TR");
+                        dataTable.ExtendedProperties["CharSet"] = "utf8";
+                        string[] headers = (await reader.ReadLineAsync()).Split(',');
+                        foreach (string header in headers)
+                        {
+                            dataTable.Columns.Add(header);
+                        }
+
+                        while (!reader.EndOfStream)
+                        {
+                            string[] rows = (await reader.ReadLineAsync()).Split(',');
+                            await Task.Run(() =>
+                            {
+                                DataRow dataRow = dataTable.NewRow();
+                                for (int i = 0; i < headers.Length; i++)
+                                {
+                                    dataRow[i] = rows[i];
+                                }
+                                dataTable.Rows.Add(dataRow);
+                            });
+                        }
+                        dataGridView1.Invoke((MethodInvoker)delegate { dataGridView1.DataSource = dataTable; });
+                    }
+                }
+                else
+                {
+                    throw new Exception("Dosya Açılamadı!");
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Bir hata oluştu: " + err.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         // Graphs/Charts
         int time = 0;
@@ -165,6 +197,9 @@ namespace Yer_İstasyonu_Yazılımı
                 chAltidute.Invoke(new Action(() =>
                 {
                     chAltidute.ChartAreas[0].AxisX.Interval = interval;
+                    chAltidute.ChartAreas[0].AxisX.Title = "Zaman(sn)";
+                    chAltidute.ChartAreas[0].AxisY.Title = "Yükseklik(m)";
+                    chAltidute.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 16);
 
                     chAltidute.Series[0].Points.AddXY(time, r.Next(0, 100)); //Funcs.parameters[6]); // Veriyi grafiğe ekle
                     chAltidute.Series[1].Points.AddXY(time, r.Next(0, 100)); //Funcs.parameters[7]); // Veriyi grafiğe ekle
@@ -173,7 +208,10 @@ namespace Yer_İstasyonu_Yazılımı
                 }));
                 chBatteryVolt.Invoke(new Action(() =>
                 {
-                    chBatteryVolt.ChartAreas[0].AxisY.Interval = interval;
+                    chBatteryVolt.ChartAreas[0].AxisX.Interval = interval;
+                    chBatteryVolt.ChartAreas[0].AxisX.Title = "Zaman(sn)";
+                    chBatteryVolt.ChartAreas[0].AxisY.Title = "Volt(V)";
+                    chBatteryVolt.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
                     chBatteryVolt.Series[0].Points.AddXY(time, r.Next(0, 12)); // Funcs.parameters[11]);
                     chBatteryVolt.Invalidate();
@@ -182,31 +220,43 @@ namespace Yer_İstasyonu_Yazılımı
                 chPressure.Invoke(new Action(() =>
                 {
                     chPressure.ChartAreas[0].AxisX.Interval = interval;
+                    chPressure.ChartAreas[0].AxisX.Title = "Zaman(sn)";
+                    chPressure.ChartAreas[0].AxisY.Title = "Paskal";
+                    chPressure.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
-                    chPressure.Series[0].Points.AddXY(time, r.Next(700, 900));
-                    chPressure.Series[1].Points.AddXY(time, r.Next(700, 900));
+                    chPressure.Series[0].Points.AddXY(time, r.Next(700, 900)); // Func.parameters[4]);
+                    chPressure.Series[1].Points.AddXY(time, r.Next(700, 900)); // Func.parameters[5]);
                     chPressure.Invalidate();
                     chPressure.ResetAutoValues();
                 }));
                 chTempurature.Invoke(new Action(() =>
                 {
-                    chTempurature.ChartAreas[0].AxisX2.Interval = interval;
+                    chTempurature.ChartAreas[0].AxisX.Interval = interval;
+                    chTempurature.ChartAreas[0].AxisX.Title = "Zaman(sn)";
+                    chTempurature.ChartAreas[0].AxisY.Title = "Derece(℃)";
+                    chTempurature.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
-                    chTempurature.Series[0].Points.AddXY(time, r.Next(25, 35));
+                    chTempurature.Series[0].Points.AddXY(time, r.Next(25, 35)); // Func.parameters[10]);
                     chTempurature.Invalidate();
                     chTempurature.ResetAutoValues();
                 }));
                 chSpeed.Invoke(new Action(() =>
                 {
-                    chSpeed.ChartAreas[0].AxisY.Interval = interval;
+                    chSpeed.ChartAreas[0].AxisX.Interval = interval;
+                    chSpeed.ChartAreas[0].AxisX.Title = "Zaman(sn)";
+                    chSpeed.ChartAreas[0].AxisY.Title = "Hız(m/sn)";
+                    chSpeed.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial",12);
 
-                    chSpeed.Series[0].Points.AddXY(time, r.Next(0, 25));
+                    chSpeed.Series[0].Points.AddXY(time, r.Next(-25, 0)); // Func.parameters[9]);
                     chSpeed.Invalidate();
                     chSpeed.ResetAutoValues();
                 }));
                 chPackageNum.Invoke(new Action(() =>
                 {
-                    chPackageNum.ChartAreas[0].AxisX2.Interval = interval;
+                    chPackageNum.ChartAreas[0].AxisX.Interval = interval;
+                    chPackageNum.ChartAreas[0].AxisX.Title = "Zaman(sn)";
+                    chPackageNum.ChartAreas[0].AxisY.Title = "Paket Sayısı(Adet)";
+                    chPackageNum.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
                     chPackageNum.Series[0].Points.AddXY(time, time);
                     chPackageNum.Invalidate();
@@ -493,7 +543,10 @@ namespace Yer_İstasyonu_Yazılımı
                 {
                     z = 0;
                 }
-                glControl.Invalidate();
+                glControl.Invoke(new Action(() =>
+                {
+                    glControl.Invalidate();
+                }));
             });
         }
 
@@ -513,7 +566,7 @@ namespace Yer_İstasyonu_Yazılımı
                 }
                 Invoke(new Action(() =>
                 {
-                    listBox1.Items.Add(data);
+                    listBox1.Items[1]=data;
                     Funcs.AddRow(dataGridView1, data);
                 }));
         }
@@ -522,16 +575,18 @@ namespace Yer_İstasyonu_Yazılımı
             if (serialPort.IsOpen)
             {
                 serialPort.Close();
-
+                IsConnected = false;
             }
-            serialPort.PortName = cmBPorts.Text; // seri portun adı
-            serialPort.BaudRate = 9600; //Convert.ToInt32(txtBandRate.Text); // baud rate
+            serialPort.PortName = cmBPorts.Text == null ? "COM6" : cmBPorts.Text; // seri portun adı
+            serialPort.BaudRate = txtBandRate.Text == null ? 9600 : Convert.ToInt32(txtBandRate.Text); // baud rate
             serialPort.Parity = Parity.None; // parity ayarı
             serialPort.DataBits = 8; // data bits
             serialPort.StopBits = StopBits.One; // stop bits
             serialPort.DataReceived += new SerialDataReceivedEventHandler(serialPort_DataReceived);
             serialPort.Open();
-            listBox1.Items.Add("Bağlandı");
+            IsConnected = true;
+            TimerTrigger();
+            listBox1.Items[0]="Bağlandı";
         }
         private void btnPortScan_Click(object sender, EventArgs e)
         {
@@ -549,20 +604,27 @@ namespace Yer_İstasyonu_Yazılımı
         private void gMap_Load(object sender, EventArgs e)
         {
             GMaps.Instance.Mode = AccessMode.ServerAndCache;
-            gMap.MapProvider = GMap.NET.MapProviders.GoogleKoreaSatelliteMapProvider.Instance;
+            gMap.MapProvider = GoogleKoreaSatelliteMapProvider.Instance;
             gMap.Position = new PointLatLng(39.921033, 32.852894);
             gMap.MinZoom = 1;
             gMap.MaxZoom = 15;
-            gMap.Zoom = 8;
-            marker = Funcs.AddMarker(lat, lng);
+            gMap.Zoom = 10;
+            gMap.ShowCenter = false;
+            marker = Funcs.AddMarker(lat, lng);//Funcs.AddMarker(Convert.ToDouble(Funcs.parameters[13]), Convert.ToDouble(Funcs.parameters[14]));
             GMapOverlay gMapOverlay = new GMapOverlay();
             gMapOverlay.Markers.Add(marker);
             gMap.Overlays.Add(gMapOverlay);
         }
         private void timerMap_Tick(object sender, EventArgs e)
         {
-            marker.Position = new PointLatLng(marker.Position.Lat + 0.051, marker.Position.Lng + 0.051);
-            gMap.Position = new PointLatLng(marker.Position.Lat + 0.051, marker.Position.Lng + 0.051);
+            Random r = new Random();
+            double lat = r.NextDouble();
+            double lng = r.NextDouble();
+            PointLatLng point = new PointLatLng(marker.Position.Lat + lat, marker.Position.Lng + lng);
+            marker.Position = point;
+            gMap.Position = point;
+            //marker.Position = new PointLatLng(Convert.ToDouble(Funcs.parameters[13]), Convert.ToDouble(Funcs.parameters[14]));
+            //gMap.Position = new PointLatLng(Convert.ToDouble(Funcs.parameters[13]), Convert.ToDouble(Funcs.parameters[14]));
         }
     }
 }

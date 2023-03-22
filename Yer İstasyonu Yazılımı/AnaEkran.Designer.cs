@@ -55,6 +55,8 @@
             System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaEkran));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.chPackageNum = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -71,6 +73,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnPortScan = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.glControl = new OpenTK.GLControl();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.cmBPorts = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -83,15 +89,10 @@
             this.btnQuit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.timerX = new System.Windows.Forms.Timer(this.components);
-            this.openFileD = new System.Windows.Forms.OpenFileDialog();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.timerGraphs = new System.Windows.Forms.Timer(this.components);
             this.gMap = new GMap.NET.WindowsForms.GMapControl();
             this.timerMap = new System.Windows.Forms.Timer(this.components);
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.glControl = new OpenTK.GLControl();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnPortScan = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chPackageNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chSpeed)).BeginInit();
@@ -103,6 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -307,7 +309,7 @@
             this.csvload.TabIndex = 13;
             this.csvload.Text = ".csv yükle";
             this.csvload.UseVisualStyleBackColor = true;
-            this.csvload.Click += new System.EventHandler(this.csvload_Click);
+            this.csvload.Click += new System.EventHandler(this.csvload_ClickAsync);
             // 
             // csvSave
             // 
@@ -350,7 +352,24 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(14, 15);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -371,13 +390,16 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(11, 73);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1485, 996);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.TabStop = false;
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.pictureBox1);
             this.tabPage4.Controls.Add(this.btnPortScan);
             this.tabPage4.Controls.Add(this.label2);
             this.tabPage4.Controls.Add(this.glControl);
@@ -397,12 +419,56 @@
             this.tabPage4.Text = "Durum ve Bağlantı";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Yer_İstasyonu_Yazılımı.Properties.Resources.Icon;
+            this.pictureBox1.Location = new System.Drawing.Point(21, 782);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(162, 163);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnPortScan
+            // 
+            this.btnPortScan.Location = new System.Drawing.Point(261, 82);
+            this.btnPortScan.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPortScan.Name = "btnPortScan";
+            this.btnPortScan.Size = new System.Drawing.Size(84, 33);
+            this.btnPortScan.TabIndex = 17;
+            this.btnPortScan.Text = "Port Tara";
+            this.btnPortScan.UseVisualStyleBackColor = true;
+            this.btnPortScan.Click += new System.EventHandler(this.btnPortScan_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(17, 236);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 20);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Bağlantı Durumu:";
+            // 
+            // glControl
+            // 
+            this.glControl.BackColor = System.Drawing.Color.LightBlue;
+            this.glControl.Location = new System.Drawing.Point(682, 36);
+            this.glControl.Margin = new System.Windows.Forms.Padding(4);
+            this.glControl.Name = "glControl";
+            this.glControl.Size = new System.Drawing.Size(564, 685);
+            this.glControl.TabIndex = 15;
+            this.glControl.VSync = false;
+            this.glControl.Load += new System.EventHandler(this.glControl_Load);
+            this.glControl.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl_Paint);
+            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(21, 271);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(578, 420);
+            this.listBox1.Size = new System.Drawing.Size(578, 43);
             this.listBox1.TabIndex = 14;
             // 
             // cmBPorts
@@ -417,11 +483,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(17, 770);
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(17, 759);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 20);
+            this.label3.Size = new System.Drawing.Size(121, 19);
             this.label3.TabIndex = 12;
             this.label3.Text = "Takım Bilgileri:";
             // 
@@ -523,10 +589,6 @@
             // 
             this.timerX.Tick += new System.EventHandler(this.timerX_Tick);
             // 
-            // openFileD
-            // 
-            this.openFileD.FileName = "openFileD";
-            // 
             // serialPort
             // 
             this.serialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort_DataReceived);
@@ -568,58 +630,12 @@
             // 
             this.timerMap.Tick += new System.EventHandler(this.timerMap_Tick);
             // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(1500, 93);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(407, 440);
-            this.webBrowser1.TabIndex = 11;
-            this.webBrowser1.TabStop = false;
-            this.webBrowser1.Url = new System.Uri("http://192.168.0.30/html", System.UriKind.Absolute);
-            // 
-            // glControl
-            // 
-            this.glControl.BackColor = System.Drawing.Color.LightBlue;
-            this.glControl.Location = new System.Drawing.Point(664, 6);
-            this.glControl.Margin = new System.Windows.Forms.Padding(4);
-            this.glControl.Name = "glControl";
-            this.glControl.Size = new System.Drawing.Size(509, 685);
-            this.glControl.TabIndex = 15;
-            this.glControl.VSync = false;
-            this.glControl.Load += new System.EventHandler(this.glControl_Load);
-            this.glControl.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl_Paint);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(17, 236);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 20);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Bağlantı Durumu:";
-            // 
-            // btnPortScan
-            // 
-            this.btnPortScan.Location = new System.Drawing.Point(261, 82);
-            this.btnPortScan.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPortScan.Name = "btnPortScan";
-            this.btnPortScan.Size = new System.Drawing.Size(84, 33);
-            this.btnPortScan.TabIndex = 17;
-            this.btnPortScan.Text = "Port Tara";
-            this.btnPortScan.UseVisualStyleBackColor = true;
-            this.btnPortScan.Click += new System.EventHandler(this.btnPortScan_Click);
-            // 
             // AnaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
-            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.gMap);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
@@ -644,6 +660,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -672,14 +689,12 @@
         private System.Windows.Forms.Button csvSave;
         private System.Windows.Forms.ComboBox cmBPorts;
         private System.Windows.Forms.Timer timerX;
-        private System.Windows.Forms.OpenFileDialog openFileD;
         private System.IO.Ports.SerialPort serialPort;
         private System.Windows.Forms.Timer timerGraphs;
         private System.Windows.Forms.DataVisualization.Charting.Chart chAltidute;
         private GMap.NET.WindowsForms.GMapControl gMap;
         private System.Windows.Forms.Timer timerMap;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chPressure;
         private System.Windows.Forms.DataVisualization.Charting.Chart chPackageNum;
         private System.Windows.Forms.DataVisualization.Charting.Chart chSpeed;
@@ -688,6 +703,7 @@
         private System.Windows.Forms.Label label2;
         private OpenTK.GLControl glControl;
         private System.Windows.Forms.Button btnPortScan;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
