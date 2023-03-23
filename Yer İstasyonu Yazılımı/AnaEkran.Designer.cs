@@ -66,6 +66,9 @@
             this.chPressure = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chAltidute = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnFileSender = new System.Windows.Forms.Button();
+            this.listBoxAras = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.csvload = new System.Windows.Forms.Button();
             this.csvSave = new System.Windows.Forms.Button();
             this.lblPaketNum = new System.Windows.Forms.Label();
@@ -285,6 +288,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnFileSender);
+            this.tabPage1.Controls.Add(this.listBoxAras);
+            this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.csvload);
             this.tabPage1.Controls.Add(this.csvSave);
             this.tabPage1.Controls.Add(this.lblPaketNum);
@@ -299,10 +305,43 @@
             this.tabPage1.Text = "Genel";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnFileSender
+            // 
+            this.btnFileSender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnFileSender.Location = new System.Drawing.Point(580, 650);
+            this.btnFileSender.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFileSender.Name = "btnFileSender";
+            this.btnFileSender.Size = new System.Drawing.Size(128, 36);
+            this.btnFileSender.TabIndex = 16;
+            this.btnFileSender.Text = "Dosya Gönder";
+            this.btnFileSender.UseVisualStyleBackColor = true;
+            this.btnFileSender.Click += new System.EventHandler(this.btnFileSender_Click);
+            // 
+            // listBoxAras
+            // 
+            this.listBoxAras.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.listBoxAras.FormattingEnabled = true;
+            this.listBoxAras.ItemHeight = 17;
+            this.listBoxAras.Location = new System.Drawing.Point(968, 657);
+            this.listBoxAras.Margin = new System.Windows.Forms.Padding(2);
+            this.listBoxAras.Name = "listBoxAras";
+            this.listBoxAras.Size = new System.Drawing.Size(495, 293);
+            this.listBoxAras.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(898, 657);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 22);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "ARAS :";
+            // 
             // csvload
             // 
             this.csvload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.csvload.Location = new System.Drawing.Point(14, 769);
+            this.csvload.Location = new System.Drawing.Point(412, 650);
             this.csvload.Margin = new System.Windows.Forms.Padding(2);
             this.csvload.Name = "csvload";
             this.csvload.Size = new System.Drawing.Size(128, 36);
@@ -314,7 +353,7 @@
             // csvSave
             // 
             this.csvSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.csvSave.Location = new System.Drawing.Point(14, 719);
+            this.csvSave.Location = new System.Drawing.Point(254, 650);
             this.csvSave.Margin = new System.Windows.Forms.Padding(2);
             this.csvSave.Name = "csvSave";
             this.csvSave.Size = new System.Drawing.Size(128, 36);
@@ -329,9 +368,8 @@
             this.lblPaketNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblPaketNum.Location = new System.Drawing.Point(200, 657);
             this.lblPaketNum.Name = "lblPaketNum";
-            this.lblPaketNum.Size = new System.Drawing.Size(20, 22);
+            this.lblPaketNum.Size = new System.Drawing.Size(0, 22);
             this.lblPaketNum.TabIndex = 2;
-            this.lblPaketNum.Text = "0";
             // 
             // label7
             // 
@@ -578,10 +616,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(11, 9);
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(9, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(332, 25);
+            this.label4.Size = new System.Drawing.Size(300, 29);
             this.label4.TabIndex = 0;
             this.label4.Text = "HürDevrim Yer İstasyonu Yazılımı";
             // 
@@ -704,6 +742,9 @@
         private OpenTK.GLControl glControl;
         private System.Windows.Forms.Button btnPortScan;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListBox listBoxAras;
+        private System.Windows.Forms.Button btnFileSender;
     }
 }
 

@@ -42,7 +42,28 @@ namespace Yer_İstasyonu_Yazılımı
         public static String ARAS()
         {
             char[] code = parameters[3].ToCharArray();
-            return "";
+            string err = "";
+            if (code[0]==1)
+            {
+                err += "Uydunun iniş hızı 12-14 m/sn dışında !";
+            }
+            if (code[1]==1) 
+            {
+                err += " Görev Yükünün iniş hızı 6-8 m/sn dışında !";
+            }
+            if (code[2]==1)
+            {
+                err += " Taşıyıcı konum verisine ulaşılamıyor !";
+            }
+            if (code[3]==1)
+            {
+                err += " Görev Yükünün konum verisine ulaşılamıyr !";
+            }
+            if (code[4]==1)
+            {
+                err += " Ayrılma gerçekleşmedi !";
+            }
+            return err + " "+"<"+parameters[3]+">";
         }
         public async static Task<DataTable> ReadCSV(string filePath) => await Task.Run(() =>
         {

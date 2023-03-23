@@ -70,7 +70,7 @@ namespace Yer_İstasyonu_Yazılımı
         }
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
             Application.Exit();
         }
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -79,23 +79,25 @@ namespace Yer_İstasyonu_Yazılımı
         }
 
         // Parameters Table CSV Processes
-        private async void csvSave_Click(object sender, EventArgs e)
+        private void csvSave_Click(object sender, EventArgs e)
         {
             try
             {
-                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-                saveFileDialog1.Filter = "CSV file (*.csv)|*.csv";
-                saveFileDialog1.Title = "Save a CSV File";
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog
+                {
+                    Filter = "CSV file (*.csv)|*.csv",
+                    Title = "Save a CSV File"
+                };
 
                 // Show the file dialog on a separate thread using Task.Run
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     // Create the file stream to write to the file
                     StreamWriter sw = new StreamWriter(saveFileDialog1.OpenFile());
-                    for(int i =0; i< dataGridView1.Columns.Count; i++)
+                    for (int i = 0; i < dataGridView1.Columns.Count; i++)
                     {
                         sw.Write(dataGridView1.Columns[i].HeaderText);
-                        if(i != dataGridView1.Columns.Count - 1)
+                        if (i != dataGridView1.Columns.Count - 1)
                             sw.Write(',');
                     }
                     sw.Write('\n');
@@ -127,14 +129,18 @@ namespace Yer_İstasyonu_Yazılımı
         {
             try
             {
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.Filter = "CSV Files (*.csv)|*.csv";
+                OpenFileDialog openFileDialog = new OpenFileDialog
+                {
+                    Filter = "CSV Files (*.csv)|*.csv"
+                };
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     using (StreamReader reader = new StreamReader(openFileDialog.FileName))
                     {
-                        DataTable dataTable = new DataTable();
-                        dataTable.Locale = new System.Globalization.CultureInfo("tr-TR");
+                        DataTable dataTable = new DataTable
+                        {
+                            Locale = new System.Globalization.CultureInfo("tr-TR")
+                        };
                         dataTable.ExtendedProperties["CharSet"] = "utf8";
                         string[] headers = (await reader.ReadLineAsync()).Split(',');
                         foreach (string header in headers)
@@ -199,7 +205,7 @@ namespace Yer_İstasyonu_Yazılımı
                     chAltidute.ChartAreas[0].AxisX.Interval = interval;
                     chAltidute.ChartAreas[0].AxisX.Title = "Zaman(sn)";
                     chAltidute.ChartAreas[0].AxisY.Title = "Yükseklik(m)";
-                    chAltidute.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 16);
+                    chAltidute.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
                     chAltidute.Series[0].Points.AddXY(time, r.Next(0, 100)); //Funcs.parameters[6]); // Veriyi grafiğe ekle
                     chAltidute.Series[1].Points.AddXY(time, r.Next(0, 100)); //Funcs.parameters[7]); // Veriyi grafiğe ekle
@@ -551,10 +557,9 @@ namespace Yer_İstasyonu_Yazılımı
         }
 
         // Serial Port
-        private string[] ports = SerialPort.GetPortNames();
+        private string[] ports = SerialPort.GetPortNames(); int packageNum = 0;
         private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-           
                 string data="";
                 try
                 {
@@ -566,27 +571,42 @@ namespace Yer_İstasyonu_Yazılımı
                 }
                 Invoke(new Action(() =>
                 {
+                    packageNum++;
+                    lblPaketNum.Text = packageNum.ToString();
                     listBox1.Items[1]=data;
                     Funcs.AddRow(dataGridView1, data);
+                    string err = Funcs.ARAS();
+                    if (err != "")
+                    {
+                        MessageBox.Show(err, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        listBoxAras.Items.Add(err);
+                    }
                 }));
         }
         private void connectCom_Click(object sender, EventArgs e)
         {
-            if (serialPort.IsOpen)
+            if (cmBPorts.Text != null && txtBandRate.Text == null)
             {
-                serialPort.Close();
-                IsConnected = false;
+                if (serialPort.IsOpen)
+                {
+                    serialPort.Close();
+                    IsConnected = false;
+                }
+                serialPort.PortName = cmBPorts.Text ?? "COM6"; // seri portun adı
+                serialPort.BaudRate = txtBandRate.Text == null ? 9600 : Convert.ToInt32(txtBandRate.Text); // baud rate
+                serialPort.Parity = Parity.None; // parity ayarı
+                serialPort.DataBits = 8; // data bits
+                serialPort.StopBits = StopBits.One; // stop bits
+                serialPort.DataReceived += new SerialDataReceivedEventHandler(serialPort_DataReceived);
+                serialPort.Open();
+                IsConnected = true;
+                TimerTrigger();
+                listBox1.Items[0] = "Bağlandı";
             }
-            serialPort.PortName = cmBPorts.Text == null ? "COM6" : cmBPorts.Text; // seri portun adı
-            serialPort.BaudRate = txtBandRate.Text == null ? 9600 : Convert.ToInt32(txtBandRate.Text); // baud rate
-            serialPort.Parity = Parity.None; // parity ayarı
-            serialPort.DataBits = 8; // data bits
-            serialPort.StopBits = StopBits.One; // stop bits
-            serialPort.DataReceived += new SerialDataReceivedEventHandler(serialPort_DataReceived);
-            serialPort.Open();
-            IsConnected = true;
-            TimerTrigger();
-            listBox1.Items[0]="Bağlandı";
+            else
+            {
+                MessageBox.Show("Portu ve Baund Oranını belirmediniz.","Uyarı",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
         }
         private void btnPortScan_Click(object sender, EventArgs e)
         {
@@ -597,6 +617,36 @@ namespace Yer_İstasyonu_Yazılımı
                 cmBPorts.Items.Add(port);
             }
         }
+        private void btnFileSender_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "(*.avi) | *.avi | (*.mp4) | *.mp4" ,
+                Title = "Gönderilecek Dosyayı Seçin"
+            };
+            if (openFileDialog.ShowDialog() == DialogResult.OK && openFileDialog.FileName != "")
+            {
+                byte[] data = File.ReadAllBytes(openFileDialog.FileName);
+                int dosyaboyutu = data.Length;
+                int gonderilenByte = 0;
+                while(gonderilenByte < dosyaboyutu)
+                {
+                    int kalan = dosyaboyutu - gonderilenByte;
+                    int wilsend = kalan < 1024 ? kalan : 1024;
+                    serialPort.Write(data, gonderilenByte, wilsend);
+                    gonderilenByte += wilsend;
+                }
+            }
+            //SaveFileDialog openFileDialog1 = new SaveFileDialog
+            //{
+            //    Filter = "(*.avi) | *.avi | (*.mp4) | *.mp4",
+            //    Title = "Gönderilecek Dosyayı Seçin"
+            //};
+            //if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            //{
+            //    File.WriteAllBytes(openFileDialog1.FileName, data);
+            //}
+        }
 
         // Map
         double lat = 30, lng = 25;
@@ -605,26 +655,27 @@ namespace Yer_İstasyonu_Yazılımı
         {
             GMaps.Instance.Mode = AccessMode.ServerAndCache;
             gMap.MapProvider = GoogleKoreaSatelliteMapProvider.Instance;
-            gMap.Position = new PointLatLng(39.921033, 32.852894);
+            gMap.Position = new PointLatLng(39.920777, 32.854107);
             gMap.MinZoom = 1;
             gMap.MaxZoom = 15;
-            gMap.Zoom = 10;
+            gMap.Zoom = 15;
             gMap.ShowCenter = false;
-            marker = Funcs.AddMarker(lat, lng);//Funcs.AddMarker(Convert.ToDouble(Funcs.parameters[13]), Convert.ToDouble(Funcs.parameters[14]));
+            marker = Funcs.AddMarker(39.920777, 32.854107);//Funcs.AddMarker(Convert.ToDouble(Funcs.parameters[13]), Convert.ToDouble(Funcs.parameters[14]));
             GMapOverlay gMapOverlay = new GMapOverlay();
             gMapOverlay.Markers.Add(marker);
             gMap.Overlays.Add(gMapOverlay);
         }
         private void timerMap_Tick(object sender, EventArgs e)
         {
-            Random r = new Random();
-            double lat = r.NextDouble();
-            double lng = r.NextDouble();
-            PointLatLng point = new PointLatLng(marker.Position.Lat + lat, marker.Position.Lng + lng);
-            marker.Position = point;
-            gMap.Position = point;
+            //Random r = new Random();
+            //double lat = r.NextDouble();
+            //double lng = r.NextDouble();
+            //PointLatLng point = new PointLatLng(marker.Position.Lat + lat, marker.Position.Lng + lng);
+            //marker.Position = point;
+            //gMap.Position = point;
             //marker.Position = new PointLatLng(Convert.ToDouble(Funcs.parameters[13]), Convert.ToDouble(Funcs.parameters[14]));
             //gMap.Position = new PointLatLng(Convert.ToDouble(Funcs.parameters[13]), Convert.ToDouble(Funcs.parameters[14]));
         }
     }
+
 }
