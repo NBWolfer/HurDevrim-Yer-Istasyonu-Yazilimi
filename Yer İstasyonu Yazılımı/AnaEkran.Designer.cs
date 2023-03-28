@@ -66,6 +66,7 @@
             this.chPressure = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chAltidute = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnFileSender = new System.Windows.Forms.Button();
             this.listBoxAras = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -76,6 +77,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnCutcon = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnPortScan = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -96,6 +98,7 @@
             this.timerGraphs = new System.Windows.Forms.Timer(this.components);
             this.gMap = new GMap.NET.WindowsForms.GMapControl();
             this.timerMap = new System.Windows.Forms.Timer(this.components);
+            this.lblPortStat = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chPackageNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chSpeed)).BeginInit();
@@ -288,6 +291,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.btnFileSender);
             this.tabPage1.Controls.Add(this.listBoxAras);
             this.tabPage1.Controls.Add(this.label5);
@@ -305,10 +309,20 @@
             this.tabPage1.Text = "Genel";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(49, 921);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(151, 22);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Dosya İşlemleri :";
+            // 
             // btnFileSender
             // 
             this.btnFileSender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnFileSender.Location = new System.Drawing.Point(580, 650);
+            this.btnFileSender.Location = new System.Drawing.Point(551, 914);
             this.btnFileSender.Margin = new System.Windows.Forms.Padding(2);
             this.btnFileSender.Name = "btnFileSender";
             this.btnFileSender.Size = new System.Drawing.Size(128, 36);
@@ -341,7 +355,7 @@
             // csvload
             // 
             this.csvload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.csvload.Location = new System.Drawing.Point(412, 650);
+            this.csvload.Location = new System.Drawing.Point(383, 914);
             this.csvload.Margin = new System.Windows.Forms.Padding(2);
             this.csvload.Name = "csvload";
             this.csvload.Size = new System.Drawing.Size(128, 36);
@@ -353,7 +367,7 @@
             // csvSave
             // 
             this.csvSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.csvSave.Location = new System.Drawing.Point(254, 650);
+            this.csvSave.Location = new System.Drawing.Point(225, 914);
             this.csvSave.Margin = new System.Windows.Forms.Padding(2);
             this.csvSave.Name = "csvSave";
             this.csvSave.Size = new System.Drawing.Size(128, 36);
@@ -437,6 +451,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.lblPortStat);
+            this.tabPage4.Controls.Add(this.btnCutcon);
             this.tabPage4.Controls.Add(this.pictureBox1);
             this.tabPage4.Controls.Add(this.btnPortScan);
             this.tabPage4.Controls.Add(this.label2);
@@ -456,6 +472,17 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Durum ve Bağlantı";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnCutcon
+            // 
+            this.btnCutcon.Location = new System.Drawing.Point(283, 148);
+            this.btnCutcon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCutcon.Name = "btnCutcon";
+            this.btnCutcon.Size = new System.Drawing.Size(128, 36);
+            this.btnCutcon.TabIndex = 19;
+            this.btnCutcon.Text = "Bağlantı Kes";
+            this.btnCutcon.UseVisualStyleBackColor = true;
+            this.btnCutcon.Click += new System.EventHandler(this.btnCutcon_Click);
             // 
             // pictureBox1
             // 
@@ -506,7 +533,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(21, 271);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(578, 43);
+            this.listBox1.Size = new System.Drawing.Size(654, 446);
             this.listBox1.TabIndex = 14;
             // 
             // cmBPorts
@@ -668,6 +695,16 @@
             // 
             this.timerMap.Tick += new System.EventHandler(this.timerMap_Tick);
             // 
+            // lblPortStat
+            // 
+            this.lblPortStat.AutoSize = true;
+            this.lblPortStat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblPortStat.Location = new System.Drawing.Point(365, 89);
+            this.lblPortStat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPortStat.Name = "lblPortStat";
+            this.lblPortStat.Size = new System.Drawing.Size(0, 20);
+            this.lblPortStat.TabIndex = 20;
+            // 
             // AnaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -745,6 +782,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listBoxAras;
         private System.Windows.Forms.Button btnFileSender;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCutcon;
+        private System.Windows.Forms.Label lblPortStat;
     }
 }
 

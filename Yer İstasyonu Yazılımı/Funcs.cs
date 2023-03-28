@@ -10,38 +10,42 @@ namespace Yer_İstasyonu_Yazılımı
     public class Funcs
     {
         public static void TabloDuzen(DataGridView dgw)
-        { 
-            string headers = "<PAKET-NUMARASI>, <UYDU-STATUSU>, <HATA-KODU>, <GONDERME-SAATI>, <BASINC1>, <BASINC2>, <YUKSEKLIK1>, <YUKSEKLIK2>, <IRTIFA-FARKI>, <INIS-HIZI>, <SICAKLIK>, <PIL-GERILIMI>, <GPS1-LATITUDE>, <GPS1-LONGITUDE>, <GPS1-ALTITUDE>, <GPS2-LATITUDE>, <GPS2-LONGITUDE>, <GPS2-ALTITUDE>, <PITCH>, <ROLL>, <YAW>, <TAKIM-NO>";
+        {
+            string headers = "<PAKET-NUMARASI>, <UYDU-STATUSU>, <HATA-KODU>, <GONDERME-TARİHİ>, <GONDERME-SAATI>, <BASINC1>, <BASINC2>, <YUKSEKLIK1>, <YUKSEKLIK2>, <IRTIFA-FARKI>, <INIS-HIZI>, <SICAKLIK>, <PIL-GERILIMI>, <GPS1-LATITUDE>, <GPS1-LONGITUDE>, <GPS1-ALTITUDE>, <GPS2-LATITUDE>, <GPS2-LONGITUDE>, <GPS2-ALTITUDE>, <PITCH>, <ROLL>, <YAW>, <TAKIM-NO>";
             string[] parts = headers.Split(new char[] { '<', '>', ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
             string[] output = parts.Select(p => p.Trim()).ToArray();
             int index = 0;
-            parameters = output;
             dgw.ColumnCount = output.Length;
             foreach (string item in output)
             {
-                    dgw.Columns[index++].HeaderText = item;
+                dgw.Columns[index++].HeaderText = item;
             }
         }
 
-        public static string[] parameters;
-        public static void AddRow(DataGridView dgw, string param)
+        public static string[] DataSplit(string param)
+        {
+            string[] outputs= new string[22];
+            string[] parts = param.Split(new char[] { '<', '>', ',', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            outputs = parts.Select(p => p.Trim()).ToArray();
+            for (int i = 0; i < parts.Length; i++)
+            {
+                outputs[i] = parts[i].Trim();
+                if (outputs[i] == "")
+                {
+                    outputs[i] = " ";
+                }
+            }
+            return outputs;
+        }
+        public static void AddRow(DataGridView dgw, string[] outputs)
         {
             DataGridViewRow dgvr = new DataGridViewRow();
-
-            string[] parts = param.Split(new char[] { '<', '>', ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            string[] outputs = parts.Select(p => p.Trim()).ToArray();
-
-            int index = 0;
-            parameters = outputs;
-            foreach (string item in outputs)
-            {
-                dgvr.Cells[index++].Value = item;
-            }
-            dgw.Rows.Add(dgvr);
+            dgvr.CreateCells(dgw, outputs);
+            dgw.Invoke(new Action(() => { dgw.Rows.Add(dgvr); })); 
         }
-        public static String ARAS()
+        public static string ARAS(string param)
         {
-            char[] code = parameters[3].ToCharArray();
+            char[] code = DataSplit(param)[3].ToCharArray();
             string err = "";
             if (code[0]==1)
             {
@@ -63,7 +67,7 @@ namespace Yer_İstasyonu_Yazılımı
             {
                 err += " Ayrılma gerçekleşmedi !";
             }
-            return err + " "+"<"+parameters[3]+">";
+            return err + " "+"<"+DataSplit(param)[3]+">";
         }
         public async static Task<DataTable> ReadCSV(string filePath) => await Task.Run(() =>
         {
