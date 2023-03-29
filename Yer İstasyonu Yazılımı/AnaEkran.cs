@@ -183,107 +183,6 @@ namespace Yer_İstasyonu_Yazılımı
             }
         }
 
-
-        // Graphs/Charts
-        int time = 0; int row = 0;
-        private void timerGraphs_Tick(object sender, EventArgs e)
-        {
-            //await Task.Run(() =>
-            //{
-               
-            //    int dataCount = chAltidute.Series[0].Points.Count;
-            //    Random r = new Random();
-            //    int temp = r.Next(0, 100);
-            //    int interval = 1;
-            //    time++;
-            //    if (dataCount > 10)
-            //    {
-            //        interval = 5;
-            //    }
-            //    if (dataCount > 50)
-            //    {
-            //        interval = 15;
-            //    }
-            //    if (dataCount > 100)
-            //    {
-            //        interval = 30;
-            //    }
-            //    if (dataCount > 200)
-            //    {
-            //        interval = 50;
-            //    }
-
-            //    chAltidute.Invoke(new Action(() =>
-            //    {
-            //        chAltidute.ChartAreas[0].AxisX.Interval = interval;
-            //        chAltidute.ChartAreas[0].AxisX.Title = "Zaman(sn)";
-            //        chAltidute.ChartAreas[0].AxisY.Title = "Yükseklik(m)";
-            //        chAltidute.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
-
-            //        chAltidute.Series[0].Points.AddXY(time, dataGridView1.Rows[row].Cells[5].Value); //Funcs.parameters[6]); // Veriyi grafiğe ekle
-            //        chAltidute.Series[1].Points.AddXY(time, r.Next(0, 100)); //Funcs.parameters[7]); // Veriyi grafiğe ekle
-            //        chAltidute.Invalidate();
-            //        chAltidute.ResetAutoValues();
-            //    }));
-            //    chBatteryVolt.Invoke(new Action(() =>
-            //    {
-            //        chBatteryVolt.ChartAreas[0].AxisX.Interval = interval;
-            //        chBatteryVolt.ChartAreas[0].AxisX.Title = "Zaman(sn)";
-            //        chBatteryVolt.ChartAreas[0].AxisY.Title = "Volt(V)";
-            //        chBatteryVolt.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
-
-            //        chBatteryVolt.Series[0].Points.AddXY(time, r.Next(0, 12)); // Funcs.parameters[11]);
-            //        chBatteryVolt.Invalidate();
-            //        chBatteryVolt.ResetAutoValues();
-            //    }));
-            //    chPressure.Invoke(new Action(() =>
-            //    {
-            //        chPressure.ChartAreas[0].AxisX.Interval = interval;
-            //        chPressure.ChartAreas[0].AxisX.Title = "Zaman(sn)";
-            //        chPressure.ChartAreas[0].AxisY.Title = "Basınç(Pa)";
-            //        chPressure.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
-
-            //        chPressure.Series[0].Points.AddXY(time, r.Next(700, 900)); // Func.parameters[4]);
-            //        chPressure.Series[1].Points.AddXY(time, r.Next(700, 900)); // Func.parameters[5]);
-            //        chPressure.Invalidate();
-            //        chPressure.ResetAutoValues();
-            //    }));
-            //    chTempurature.Invoke(new Action(() =>
-            //    {
-            //        chTempurature.ChartAreas[0].AxisX.Interval = interval;
-            //        chTempurature.ChartAreas[0].AxisX.Title = "Zaman(sn)";
-            //        chTempurature.ChartAreas[0].AxisY.Title = "Derece(℃)";
-            //        chTempurature.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
-
-            //        chTempurature.Series[0].Points.AddXY(time, r.Next(25, 35)); // Func.parameters[10]);
-            //        chTempurature.Invalidate();
-            //        chTempurature.ResetAutoValues();
-            //    }));
-            //    chSpeed.Invoke(new Action(() =>
-            //    {
-            //        chSpeed.ChartAreas[0].AxisX.Interval = interval;
-            //        chSpeed.ChartAreas[0].AxisX.Title = "Zaman(sn)";
-            //        chSpeed.ChartAreas[0].AxisY.Title = "Hız(m/sn)";
-            //        chSpeed.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
-
-            //        chSpeed.Series[0].Points.AddXY(time, r.Next(-25, 0)); // Func.parameters[9]);
-            //        chSpeed.Invalidate();
-            //        chSpeed.ResetAutoValues();
-            //    }));
-            //    chPackageNum.Invoke(new Action(() =>
-            //    {
-            //        chPackageNum.ChartAreas[0].AxisX.Interval = interval;
-            //        chPackageNum.ChartAreas[0].AxisX.Title = "Zaman(sn)";
-            //        chPackageNum.ChartAreas[0].AxisY.Title = "Paket Sayısı(Adet)";
-            //        chPackageNum.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
-
-            //        chPackageNum.Series[0].Points.AddXY(time, time);
-            //        chPackageNum.Invalidate();
-            //        chPackageNum.ResetAutoValues();
-            //    }));
-            //});
-        }
-
         // Simulation Drawing
         float x = 0, y = 0, z = 0;
         private void glControl_Paint(object sender, PaintEventArgs e)
@@ -551,42 +450,9 @@ namespace Yer_İstasyonu_Yazılımı
             }
             GL.End();
         }
-        private async void timerX_Tick(object sender, EventArgs e)
-        {
-            await Task.Run(() => {
-                //if (z < 180)
-                //{
-                //    z += 1;
-                //}
-                //else
-                //{
-                //    z = 0;
-                //}
-                //if (x < 180)
-                //{
-                //    x += 1;
-                //}
-                //else
-                //{
-                //    x = 0;
-                //}
-                //if (y < 180)
-                //{
-                //    y += 1;
-                //}
-                //else
-                //{
-                //    y = 0;
-                //}
-                glControl.Invoke(new Action(() =>
-                {
-                    glControl.Invalidate();
-                }));
-            });
-        }
 
         // Serial Port
-        private string[] ports = SerialPort.GetPortNames(); int packageNum = 0; int rowGyro = 0; bool isMessageBoxOpen=false;
+        private string[] ports = SerialPort.GetPortNames(); int packageNum = 0; int rowGyro = 0; bool isMessageBoxOpen=false; int time = 0; int row = 0;
         private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             string data="";
@@ -868,20 +734,6 @@ namespace Yer_İstasyonu_Yazılımı
             gMap.MaxZoom = 15;
             gMap.Zoom = 15;
             gMap.ShowCenter = false;
-        }
-        private void timerMap_Tick(object sender, EventArgs e)
-        {
-            //Random r = new Random();
-            //double lat = r.NextDouble();
-            //double lng = r.NextDouble();
-            //PointLatLng point = new PointLatLng(marker.Position.Lat + lat, marker.Position.Lng + lng);
-            //marker.Position = point;
-            //gMap.Position = point;
-            //markerPayload.Position = new PointLatLng(Convert.ToDouble(Funcs.parameters[13]), Convert.ToDouble(Funcs.parameters[14]));
-            //markerPayload.ToolTipText = "\nGörev Yükü\n\nLat:" + Convert.ToDouble(Funcs.parameters[13]) + "\nLng:" + Convert.ToDouble(Funcs.parameters[14]);
-            //markerCarrier.Position = new PointLatLng(Convert.ToDouble(Funcs.parameters[15]), Convert.ToDouble(Funcs.parameters[16]));
-            //markerCarrier.ToolTipText = "\nTaşıyıcı\n\nLat:" + Convert.ToDouble(Funcs.parameters[15]) + "\nLng:" + Convert.ToDouble(Funcs.parameters[16]);
-            //gMap.Position = new PointLatLng(Convert.ToDouble(Funcs.parameters[13]), Convert.ToDouble(Funcs.parameters[14]));
         }
     }
 

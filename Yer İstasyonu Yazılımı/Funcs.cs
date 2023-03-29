@@ -103,37 +103,5 @@ namespace Yer_İstasyonu_Yazılımı
             }
             return "x" + code[4] +err + " " + "<" + DataSplit(param)[3] + ">";
         }
-        public async static Task<DataTable> ReadCSV(string filePath) => await Task.Run(() =>
-        {
-            DataTable dt = new DataTable();
-            string[] lines = System.IO.File.ReadAllLines(filePath);
-            if (lines.Length > 0)
-            {
-                //first line to create header
-                string firstLine = lines[0];
-                string[] headerLabels = firstLine.Split(',');
-                foreach (string headerWord in headerLabels)
-                {
-                    dt.Columns.Add(new DataColumn(headerWord));
-                }
-                //For Data
-                for (int i = 1; i < lines.Length; i++)
-                {
-                    string[] dataWords = lines[i].Split(',');
-                    DataRow dr = dt.NewRow();
-                    for (int j = 0; j < dataWords.Length - 1; j++)
-                    {
-                        dr[j] = dataWords[j];
-                    }
-                    dt.Rows.Add(dr);
-                }
-            }
-            return dt;
-        });
-        public static GMarkerGoogle AddMarker(double lat, double lon)
-        {
-            GMarkerGoogle marker = new GMarkerGoogle(new GMap.NET.PointLatLng(lat, lon),GMarkerGoogleType.blue_pushpin);
-            return marker;
-        }
     }
 }
