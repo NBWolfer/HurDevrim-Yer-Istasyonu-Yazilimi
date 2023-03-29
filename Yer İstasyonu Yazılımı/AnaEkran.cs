@@ -14,6 +14,7 @@ using GMap.NET.MapProviders;
 using System.Threading;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 
 namespace Yer_İstasyonu_Yazılımı
 {
@@ -24,7 +25,6 @@ namespace Yer_İstasyonu_Yazılımı
         {
             InitializeComponent();
         }
-        private bool IsConnected = false;
         private void AnaEkran_Load(object sender, EventArgs e)
         {
             Funcs.TabloDuzen(dataGridView1);
@@ -37,12 +37,9 @@ namespace Yer_İstasyonu_Yazılımı
         }
         private void TimerIntervals()
         {
-            if (IsConnected)
-            {
                 timerX.Interval = 1000; // buradaki timer lar seriport fonksiyonunun içine yerleşecek
                 timerGraphs.Interval = 1000;
                 timerMap.Interval = 1000;
-            }
         }
 
         // Top-Side Creation
@@ -81,6 +78,7 @@ namespace Yer_İstasyonu_Yazılımı
         }
 
         // Parameters Table CSV Processes
+        DataGridView filePro;
         private void csvSave_Click(object sender, EventArgs e)
         {
             try
@@ -163,6 +161,7 @@ namespace Yer_İstasyonu_Yazılımı
                                 dataTable.Rows.Add(dataRow);
                             });
                         }
+                        
                         dataGridView1.Invoke((MethodInvoker)delegate { dataGridView1.DataSource = dataTable; });
                     }
                 }
@@ -179,11 +178,12 @@ namespace Yer_İstasyonu_Yazılımı
 
 
         // Graphs/Charts
-        int time = 0;
-        private async void timerGraphs_Tick(object sender, EventArgs e)
+        int time = 0; int row = 0;
+        private void timerGraphs_Tick(object sender, EventArgs e)
         {
             //await Task.Run(() =>
             //{
+               
             //    int dataCount = chAltidute.Series[0].Points.Count;
             //    Random r = new Random();
             //    int temp = r.Next(0, 100);
@@ -213,7 +213,7 @@ namespace Yer_İstasyonu_Yazılımı
             //        chAltidute.ChartAreas[0].AxisY.Title = "Yükseklik(m)";
             //        chAltidute.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
-            //        chAltidute.Series[0].Points.AddXY(time, r.Next(0, 100)); //Funcs.parameters[6]); // Veriyi grafiğe ekle
+            //        chAltidute.Series[0].Points.AddXY(time, dataGridView1.Rows[row].Cells[5].Value); //Funcs.parameters[6]); // Veriyi grafiğe ekle
             //        chAltidute.Series[1].Points.AddXY(time, r.Next(0, 100)); //Funcs.parameters[7]); // Veriyi grafiğe ekle
             //        chAltidute.Invalidate();
             //        chAltidute.ResetAutoValues();
@@ -257,7 +257,7 @@ namespace Yer_İstasyonu_Yazılımı
             //        chSpeed.ChartAreas[0].AxisX.Interval = interval;
             //        chSpeed.ChartAreas[0].AxisX.Title = "Zaman(sn)";
             //        chSpeed.ChartAreas[0].AxisY.Title = "Hız(m/sn)";
-            //        chSpeed.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial",12);
+            //        chSpeed.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
             //        chSpeed.Series[0].Points.AddXY(time, r.Next(-25, 0)); // Func.parameters[9]);
             //        chSpeed.Invalidate();
@@ -579,41 +579,24 @@ namespace Yer_İstasyonu_Yazılımı
         }
 
         // Serial Port
-        private string[] ports = SerialPort.GetPortNames(); int packageNum = 0; bool k=false;
+        private string[] ports = SerialPort.GetPortNames(); int packageNum = 0; int rowGyro = 0;
         private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-                string data="";
+            string data="";
             try
             {
 
                 data = serialPort.ReadLine();
-                packageNum++;
-                lblPaketNum.Invoke(new Action(() => { lblPaketNum.Text = packageNum.ToString(); }));
-                if (data != null)
+                lblPaketNum.Invoke(new Action(() => { lblPaketNum.Text = Funcs.DataSplit(data).ToArray()[0].ToString(); }));
+                packageNum = Convert.ToInt32(Funcs.DataSplit(data).ToArray()[0].ToString());
+                if (data != null && Funcs.DataSplit(data)!=null)
                 {
-                    //if (Regex.IsMatch(data, "^<\\d*>, <\\d*>, <\\d*>, <\\d*/\\d*/\\d*>, <\\d*/\\d*/\\d*>, <\\d*>, <\\d*>, <\\d*\\.\\d*>, <\\d*\\.\\d*>, <\\d*\\.\\d*>, <\\d*\\.\\d*>, <\\d*\\.\\d*>, <\\d*\\.\\d*>,<\\d*\\.\\d*>,<\\d*\\.\\d*>,<\\d*\\.\\d*>,<\\d*\\.\\d*>,<\\d*\\.\\d*>,<\\d*\\.\\d*>,<\\d*\\.\\d*>,<\\d*\\.\\d*>,<\\d*\\.\\d*>,<\\d*\\.\\d*>$"))
-                    //{
+                    if (Regex.IsMatch(data, "^<[0-9]+>, <[0-9]+>, <[0-9]+>, <[0-9]+/[0-9]+/[0-9]+,[0-9]+/[0-9]+/[0-9]+>, <[0-9]+>, <[0-9]+||[ ]>, <[0-9]+\\.[0-9]+>, <[0-9]\\.[0-9]+||[ ]>, <[0-9]\\.[0-9]+||[ ]>, <[[0-9]+-9]+\\.[0-9]+>, [0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+||[ ]>, <[0-9]+\\.[0-9]+||[ ]>, <[0-9]+\\.[0-9]+||\b>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>,$"))
+                    {
+                        Funcs.AddRow(dataGridView1, Funcs.DataSplit(data).ToArray());
                         Task.Run(() =>
-                        {
-
-                            listBox1.Invoke(new Action(() => { listBox1.Items.Add(data); }));
-                            Funcs.AddRow(dataGridView1, Funcs.DataSplit(data));
-
-
-                            x = Convert.ToInt32(Funcs.DataSplit(data)[19]);
-                            y = Convert.ToInt32(Funcs.DataSplit(data)[20]);
-                            z = Convert.ToInt32(Funcs.DataSplit(data)[21]);
-
-                        });
-                        //string err = Funcs.ARAS(data);
-                        //if (err != "")
-                        //{
-                        //    MessageBox.Show(err, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        //    listBoxAras.Items.Add(err);
-                        //}
-                        Task.Run(() =>
-                        {
-                            int dataCount = chAltidute.Series[0].Points.Count;//Convert.ToInt32(Funcs.DataSplit(data)[0].ToString());
+                        { 
+                            int dataCount = chAltidute.Series[0].Points.Count;
                             Random r = new Random();
                             int temp = r.Next(0, 100);
                             int interval = 1;
@@ -634,10 +617,7 @@ namespace Yer_İstasyonu_Yazılımı
                             {
                                 interval = 50;
                             }
-                            if (dataCount > 300)
-                            {
-                                interval = 100;
-                            }
+
                             chAltidute.Invoke(new Action(() =>
                             {
                                 chAltidute.ChartAreas[0].AxisX.Interval = interval;
@@ -645,8 +625,8 @@ namespace Yer_İstasyonu_Yazılımı
                                 chAltidute.ChartAreas[0].AxisY.Title = "Yükseklik(m)";
                                 chAltidute.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
-                                chAltidute.Series[0].Points.AddXY(time, r.Next(0, 100)); //Funcs.DataSplit(data)[6]); // Veriyi grafiğe ekle
-                                chAltidute.Series[1].Points.AddXY(time, r.Next(0, 100)); //Funcs.DataSplit(data)[7]); // Veriyi grafiğe ekle
+                                chAltidute.Series[0].Points.AddXY(time, dataGridView1.Rows[row].Cells[6].Value); //Funcs.parameters[6]); // Veriyi grafiğe ekle
+                                chAltidute.Series[1].Points.AddXY(time, dataGridView1.Rows[row].Cells[7].Value); //Funcs.parameters[7]); // Veriyi grafiğe ekle
                                 chAltidute.Invalidate();
                                 chAltidute.ResetAutoValues();
                             }));
@@ -657,7 +637,7 @@ namespace Yer_İstasyonu_Yazılımı
                                 chBatteryVolt.ChartAreas[0].AxisY.Title = "Volt(V)";
                                 chBatteryVolt.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
-                                chBatteryVolt.Series[0].Points.AddXY(time, r.Next(0, 12)); // Funcs.DataSplit(data)[11]);
+                                chBatteryVolt.Series[0].Points.AddXY(time, dataGridView1.Rows[row].Cells[11].Value); // Funcs.parameters[11]);
                                 chBatteryVolt.Invalidate();
                                 chBatteryVolt.ResetAutoValues();
                             }));
@@ -668,8 +648,8 @@ namespace Yer_İstasyonu_Yazılımı
                                 chPressure.ChartAreas[0].AxisY.Title = "Basınç(Pa)";
                                 chPressure.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
-                                chPressure.Series[0].Points.AddXY(time, r.Next(700, 900)); // Func.DataSplit(data)[4]);
-                                chPressure.Series[1].Points.AddXY(time, r.Next(700, 900)); // Func.DataSplit(data)[5]);
+                                chPressure.Series[0].Points.AddXY(time, dataGridView1.Rows[row].Cells[4].Value); // Func.parameters[4]);
+                                chPressure.Series[1].Points.AddXY(time, dataGridView1.Rows[row].Cells[5].Value); // Func.parameters[5]);
                                 chPressure.Invalidate();
                                 chPressure.ResetAutoValues();
                             }));
@@ -680,7 +660,7 @@ namespace Yer_İstasyonu_Yazılımı
                                 chTempurature.ChartAreas[0].AxisY.Title = "Derece(℃)";
                                 chTempurature.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
-                                chTempurature.Series[0].Points.AddXY(time, r.Next(25, 35)); // Func.DataSplit(data)[10]);
+                                chTempurature.Series[0].Points.AddXY(time, dataGridView1.Rows[row].Cells[10].Value); // Func.parameters[10]);
                                 chTempurature.Invalidate();
                                 chTempurature.ResetAutoValues();
                             }));
@@ -691,7 +671,7 @@ namespace Yer_İstasyonu_Yazılımı
                                 chSpeed.ChartAreas[0].AxisY.Title = "Hız(m/sn)";
                                 chSpeed.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
-                                chSpeed.Series[0].Points.AddXY(time, r.Next(-25, 0)); // Func.DataSplit(data)[9]);
+                                chSpeed.Series[0].Points.AddXY(time, dataGridView1.Rows[row].Cells[9].Value); // Func.parameters[9]);
                                 chSpeed.Invalidate();
                                 chSpeed.ResetAutoValues();
                             }));
@@ -702,25 +682,54 @@ namespace Yer_İstasyonu_Yazılımı
                                 chPackageNum.ChartAreas[0].AxisY.Title = "Paket Sayısı(Adet)";
                                 chPackageNum.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
-                                chPackageNum.Series[0].Points.AddXY(time, time);
+                                chPackageNum.Series[0].Points.AddXY(time, dataGridView1.Rows[row].Cells[0].Value);
                                 chPackageNum.Invalidate();
                                 chPackageNum.ResetAutoValues();
                             }));
+                            row++;
                         });
-                        //Task.Run(() =>
+
+                        listBox1.Invoke(new Action(() => { listBox1.Items.Add(data); }));
+
+                        string[] gyro = { dataGridView1.Rows[rowGyro].Cells[19].Value.ToString(), dataGridView1.Rows[rowGyro].Cells[20].Value.ToString(), dataGridView1.Rows[rowGyro].Cells[21].Value.ToString()};
+                        x = float.Parse(gyro[0]);
+                        y = float.Parse(gyro[1]);
+                        z = float.Parse(gyro[2]);
+                        rowGyro++;
+                        glControl.Invoke(new Action(() => { glControl.Invalidate(); }));
+                        //string err = Funcs.ARAS(data);
+                        //if (err != "")
                         //{
-                        //    markerPayload.Position = new PointLatLng(Convert.ToDouble(Funcs.DataSplit(data)[13]), Convert.ToDouble(Funcs.DataSplit(data)[14]));
-                        //    markerPayload.ToolTipText = "\nGörev Yükü\n\nLat:" + Convert.ToDouble(Funcs.DataSplit(data)[13]) + "\nLng:" + Convert.ToDouble(Funcs.DataSplit(data)[14]);
-                        //    markerCarrier.Position = new PointLatLng(Convert.ToDouble(Funcs.DataSplit(data)[15]), Convert.ToDouble(Funcs.DataSplit(data)[16]));
-                        //    markerCarrier.ToolTipText = "\nTaşıyıcı\n\nLat:" + Convert.ToDouble(Funcs.DataSplit(data)[15]) + "\nLng:" + Convert.ToDouble(Funcs.DataSplit(data)[16]);
-                        //    gMap.Position = markerPayload.Position;
-                        //});
+                        //    MessageBox.Show(err, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        //    listBoxAras.Items.Add(err);
+                        //}
+
+                        Task.Run(() =>
+                        {
+                            markerPayload = new GMarkerGoogle(new PointLatLng(double.Parse(Funcs.DataSplit(data).ToArray()[13].ToString())+39.920777, double.Parse(Funcs.DataSplit(data).ToArray()[14].ToString())+32.854107), GMarkerGoogleType.blue_pushpin);
+                            markerPayload.ToolTipText = "\nGörev Yükü\n\nLat:" + Funcs.DataSplit(data).ToArray()[13].ToString()+ "\nLng:" + Funcs.DataSplit(data).ToArray()[14].ToString();
+                            markerCarrier = new GMarkerGoogle(new PointLatLng(double.Parse(Funcs.DataSplit(data).ToArray()[15].ToString()), double.Parse(Funcs.DataSplit(data).ToArray()[16].ToString())), GMarkerGoogleType.red_pushpin);
+                            markerCarrier.ToolTipText = "\nTaşıyıcı\n\nLat:" + Funcs.DataSplit(data).ToArray()[15].ToString() + "\nLng:" + Funcs.DataSplit(data).ToArray()[16].ToString();
+                            gMap.Invoke(new Action(() =>
+                            {
+                                gMap.Position = markerPayload.Position;
+                                gMap.Invalidate();
+                            }));
+                        });
+
                     }
-                //}
+                }
+                int waitTime = 1000;
+                DateTime endTime = DateTime.Now.AddMilliseconds(waitTime);
+                while (DateTime.Now < endTime)
+                {
+                    // Bekleme süresi dolana kadar boş bir döngü yap
+                }
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Veri alma/işleme hatası: \n"+ex, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                listBox1.Invoke(new Action(()=> { listBox1.Items[0] = "Bağlantı Hatası, Bağlantı Kesildi."; }));
                 serialPort.Close();
             }
         }
@@ -750,7 +759,7 @@ namespace Yer_İstasyonu_Yazılımı
         {
             cmBPorts.Items.Clear();
             ports = SerialPort.GetPortNames();
-            if(ports.Length == 0)
+            if (ports.Length == 0)
             {
                 lblPortStat.Text = "Port Bulunamadı!";
             }
@@ -758,16 +767,20 @@ namespace Yer_İstasyonu_Yazılımı
             {
                 cmBPorts.Items.Add(port);
             }
-            cmBPorts.Text = cmBPorts.Items[0].ToString();
+            if (ports.Length !=0)
+            {
+                cmBPorts.Text = cmBPorts.Items[0].ToString();
+            }
         }
         private void btnFileSender_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog
-            {
-                Filter = "(*.avi) | *.avi | (*.mp4) | *.mp4" ,
-                Title = "Gönderilecek Dosyayı Seçin"
-            };
+
             Task.Run(() => {
+                OpenFileDialog openFileDialog = new OpenFileDialog
+                {
+                    Filter = "(*.avi) | *.avi | (*.mp4) | *.mp4" ,
+                    Title = "Gönderilecek Dosyayı Seçin"
+                };
                 bool dosyaGonderildi = false;
                 do
                 {
@@ -821,7 +834,6 @@ namespace Yer_İstasyonu_Yazılımı
         private void btnCutcon_Click(object sender, EventArgs e)
         {
             serialPort.Close();
-            IsConnected = false;
             listBox1.Items[0] = "Bağlantı Kesildi";
         }
         // Map
