@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaEkran));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.chPackageNum = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -100,6 +100,7 @@
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.timerGraphs = new System.Windows.Forms.Timer(this.components);
             this.timerMap = new System.Windows.Forms.Timer(this.components);
+            this.btnAyır = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chPackageNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chSpeed)).BeginInit();
@@ -135,161 +136,161 @@
             // 
             // chPackageNum
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chPackageNum.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chPackageNum.Legends.Add(legend1);
+            chartArea7.Name = "ChartArea1";
+            this.chPackageNum.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chPackageNum.Legends.Add(legend7);
             this.chPackageNum.Location = new System.Drawing.Point(1293, 489);
             this.chPackageNum.Name = "chPackageNum";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series1.Legend = "Legend1";
-            series1.LegendText = "Paket";
-            series1.Name = "seriesPayload";
-            this.chPackageNum.Series.Add(series1);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series9.Legend = "Legend1";
+            series9.LegendText = "Paket";
+            series9.Name = "seriesPayload";
+            this.chPackageNum.Series.Add(series9);
             this.chPackageNum.Size = new System.Drawing.Size(564, 467);
             this.chPackageNum.TabIndex = 7;
             this.chPackageNum.Text = "chart2";
-            title1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            title1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            title1.Name = "Title1";
-            title1.Text = "Paket Sayısı";
-            this.chPackageNum.Titles.Add(title1);
+            title7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title7.Name = "Title1";
+            title7.Text = "Paket Sayısı";
+            this.chPackageNum.Titles.Add(title7);
             // 
             // chSpeed
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chSpeed.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chSpeed.Legends.Add(legend2);
+            chartArea8.Name = "ChartArea1";
+            this.chSpeed.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chSpeed.Legends.Add(legend8);
             this.chSpeed.Location = new System.Drawing.Point(655, 489);
             this.chSpeed.Name = "chSpeed";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series2.Legend = "Legend1";
-            series2.LegendText = "Görev Yükü";
-            series2.Name = "seriesPayload";
-            this.chSpeed.Series.Add(series2);
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series10.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series10.Legend = "Legend1";
+            series10.LegendText = "Görev Yükü";
+            series10.Name = "seriesPayload";
+            this.chSpeed.Series.Add(series10);
             this.chSpeed.Size = new System.Drawing.Size(564, 467);
             this.chSpeed.TabIndex = 6;
             this.chSpeed.Text = "chart2";
-            title2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            title2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            title2.Name = "Title1";
-            title2.Text = "İniş Hızı";
-            this.chSpeed.Titles.Add(title2);
+            title8.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title8.Name = "Title1";
+            title8.Text = "İniş Hızı";
+            this.chSpeed.Titles.Add(title8);
             // 
             // chTempurature
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chTempurature.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chTempurature.Legends.Add(legend3);
+            chartArea9.Name = "ChartArea1";
+            this.chTempurature.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chTempurature.Legends.Add(legend9);
             this.chTempurature.Location = new System.Drawing.Point(14, 489);
             this.chTempurature.Name = "chTempurature";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series3.Legend = "Legend1";
-            series3.LegendText = "Görev Yükü";
-            series3.Name = "seriesPayload";
-            this.chTempurature.Series.Add(series3);
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series11.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series11.Legend = "Legend1";
+            series11.LegendText = "Görev Yükü";
+            series11.Name = "seriesPayload";
+            this.chTempurature.Series.Add(series11);
             this.chTempurature.Size = new System.Drawing.Size(564, 467);
             this.chTempurature.TabIndex = 5;
             this.chTempurature.Text = "chart2";
-            title3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            title3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            title3.Name = "Title1";
-            title3.Text = "Sıcaklık";
-            this.chTempurature.Titles.Add(title3);
+            title9.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title9.Name = "Title1";
+            title9.Text = "Sıcaklık";
+            this.chTempurature.Titles.Add(title9);
             // 
             // chBatteryVolt
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chBatteryVolt.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chBatteryVolt.Legends.Add(legend4);
+            chartArea10.Name = "ChartArea1";
+            this.chBatteryVolt.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chBatteryVolt.Legends.Add(legend10);
             this.chBatteryVolt.Location = new System.Drawing.Point(1293, 16);
             this.chBatteryVolt.Name = "chBatteryVolt";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series4.Legend = "Legend1";
-            series4.LegendText = "Görev Yükü";
-            series4.Name = "seriesPayload";
-            this.chBatteryVolt.Series.Add(series4);
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series12.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series12.Legend = "Legend1";
+            series12.LegendText = "Görev Yükü";
+            series12.Name = "seriesPayload";
+            this.chBatteryVolt.Series.Add(series12);
             this.chBatteryVolt.Size = new System.Drawing.Size(564, 467);
             this.chBatteryVolt.TabIndex = 4;
             this.chBatteryVolt.Text = "chart2";
-            title4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            title4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            title4.Name = "Title1";
-            title4.Text = "Pil Gerilimi";
-            this.chBatteryVolt.Titles.Add(title4);
+            title10.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title10.Name = "Title1";
+            title10.Text = "Pil Gerilimi";
+            this.chBatteryVolt.Titles.Add(title10);
             // 
             // chPressure
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chPressure.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chPressure.Legends.Add(legend5);
+            chartArea11.Name = "ChartArea1";
+            this.chPressure.ChartAreas.Add(chartArea11);
+            legend11.Name = "Legend1";
+            this.chPressure.Legends.Add(legend11);
             this.chPressure.Location = new System.Drawing.Point(655, 16);
             this.chPressure.Name = "chPressure";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series5.Legend = "Legend1";
-            series5.LegendText = "Görev Yükü";
-            series5.Name = "seriesPayload";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series6.Legend = "Legend1";
-            series6.LegendText = "Taşıyıcı";
-            series6.Name = "seriesCarrier";
-            this.chPressure.Series.Add(series5);
-            this.chPressure.Series.Add(series6);
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series13.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series13.Legend = "Legend1";
+            series13.LegendText = "Görev Yükü";
+            series13.Name = "seriesPayload";
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series14.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series14.Legend = "Legend1";
+            series14.LegendText = "Taşıyıcı";
+            series14.Name = "seriesCarrier";
+            this.chPressure.Series.Add(series13);
+            this.chPressure.Series.Add(series14);
             this.chPressure.Size = new System.Drawing.Size(564, 467);
             this.chPressure.TabIndex = 3;
             this.chPressure.Text = "chart2";
-            title5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            title5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            title5.Name = "Title1";
-            title5.Text = "Basınç";
-            this.chPressure.Titles.Add(title5);
+            title11.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title11.Name = "Title1";
+            title11.Text = "Basınç";
+            this.chPressure.Titles.Add(title11);
             // 
             // chAltidute
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chAltidute.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chAltidute.Legends.Add(legend6);
+            chartArea12.Name = "ChartArea1";
+            this.chAltidute.ChartAreas.Add(chartArea12);
+            legend12.Name = "Legend1";
+            this.chAltidute.Legends.Add(legend12);
             this.chAltidute.Location = new System.Drawing.Point(14, 16);
             this.chAltidute.Name = "chAltidute";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series7.Legend = "Legend1";
-            series7.LegendText = "Görev Yükü";
-            series7.Name = "seriesPayload";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series8.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series8.Legend = "Legend1";
-            series8.LegendText = "Taşıyıcı";
-            series8.Name = "seriesCarrier";
-            this.chAltidute.Series.Add(series7);
-            this.chAltidute.Series.Add(series8);
+            series15.ChartArea = "ChartArea1";
+            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series15.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series15.Legend = "Legend1";
+            series15.LegendText = "Görev Yükü";
+            series15.Name = "seriesPayload";
+            series16.ChartArea = "ChartArea1";
+            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series16.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series16.Legend = "Legend1";
+            series16.LegendText = "Taşıyıcı";
+            series16.Name = "seriesCarrier";
+            this.chAltidute.Series.Add(series15);
+            this.chAltidute.Series.Add(series16);
             this.chAltidute.Size = new System.Drawing.Size(564, 467);
             this.chAltidute.TabIndex = 2;
             this.chAltidute.Text = "Yükseklik";
-            title6.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            title6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            title6.Name = "Title1";
-            title6.Text = "Yükseklik";
-            this.chAltidute.Titles.Add(title6);
+            title12.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            title12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title12.Name = "Title1";
+            title12.Text = "Yükseklik";
+            this.chAltidute.Titles.Add(title12);
             // 
             // tabPage1
             // 
@@ -436,23 +437,23 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(14, 15);
             this.dataGridView1.MultiSelect = false;
@@ -483,6 +484,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btnAyır);
             this.tabPage4.Controls.Add(this.axWindowsMediaPlayer1);
             this.tabPage4.Controls.Add(this.lblStat);
             this.tabPage4.Controls.Add(this.lblPortStat);
@@ -708,6 +710,18 @@
             // 
             this.serialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort_DataReceived);
             // 
+            // btnAyır
+            // 
+            this.btnAyır.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAyır.Location = new System.Drawing.Point(777, 139);
+            this.btnAyır.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAyır.Name = "btnAyır";
+            this.btnAyır.Size = new System.Drawing.Size(128, 36);
+            this.btnAyır.TabIndex = 27;
+            this.btnAyır.Text = "Ayır";
+            this.btnAyır.UseVisualStyleBackColor = true;
+            this.btnAyır.Click += new System.EventHandler(this.btnAyır_Click);
+            // 
             // AnaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -789,6 +803,7 @@
         private GMap.NET.WindowsForms.GMapControl gMap;
         private System.Windows.Forms.ListBox listBoxAras;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnAyır;
     }
 }
 

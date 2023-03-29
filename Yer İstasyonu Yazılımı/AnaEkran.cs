@@ -720,9 +720,20 @@ namespace Yer_İstasyonu_Yazılımı
             serialPort.Close();
             lblStat.Text = "Bağlantı Kesildi";
         }
-
+        private void btnAyır_Click(object sender, EventArgs e)
+        {
+            Separate();
+        }
+        private void Separate()
+        {
+            if(serialPort.IsOpen)
+                serialPort.Write("/servo");
+        }
         // Map
         private GMarkerGoogle markerPayload;
+
+ 
+
         private GMarkerGoogle markerCarrier;
         private void gMap_Load(object sender, EventArgs e)
         {
