@@ -80,7 +80,6 @@ namespace Yer_İstasyonu_Yazılımı
         }
 
         // Parameters Table CSV Processes
-        DataGridView filePro;
         private void csvSave_Click(object sender, EventArgs e)
         {
             try
@@ -163,8 +162,14 @@ namespace Yer_İstasyonu_Yazılımı
                                 dataTable.Rows.Add(dataRow);
                             });
                         }
-                        
-                        dataGridView1.Invoke((MethodInvoker)delegate { dataGridView1.DataSource = dataTable; });
+                        if (!serialPort.IsOpen)
+                        {
+                            dataGridView1.Invoke((MethodInvoker)delegate { dataGridView1.DataSource = null; dataGridView1.Columns.Clear(); dataGridView1.DataSource = dataTable; });
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tabloyu şu anda seri port kullanıyor !", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                 }
                 else
@@ -581,7 +586,7 @@ namespace Yer_İstasyonu_Yazılımı
         }
 
         // Serial Port
-        private string[] ports = SerialPort.GetPortNames(); int packageNum = 0; int rowGyro = 0;
+        private string[] ports = SerialPort.GetPortNames(); int packageNum = 0; int rowGyro = 0; bool isMessageBoxOpen=false;
         private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             string data="";
@@ -699,12 +704,36 @@ namespace Yer_İstasyonu_Yazılımı
                         z = float.Parse(gyro[2]);
                         rowGyro++;
                         glControl.Invoke(new Action(() => { glControl.Invalidate(); }));
-                        //string err = Funcs.ARAS(data);
-                        //if (err != "")
-                        //{
-                        //    MessageBox.Show(err, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        //    listBoxAras.Items.Add(err);
-                        //}
+
+                        string err = Funcs.ARAS(data);
+                        if (err != "")
+                        {
+                            if(!isMessageBoxOpen)
+                            {
+                                isMessageBoxOpen = true;
+                                if (err[1] == 1)
+                                {
+                                    DialogResult dR =MessageBox.Show("Otomatik ayrılma gerçekleşemedi!","Hata",MessageBoxButtons.YesNo,MessageBoxIcon.Error);
+                                    if(dR == DialogResult.Yes)
+                                    {
+                                        serialPort.WriteLine("/servo");
+                                        isMessageBoxOpen = false;
+                                    }
+                                    else
+                                    {
+                                        isMessageBoxOpen = false;
+                                    }
+                                }
+                                if(!isMessageBoxOpen)
+                                {
+                                    isMessageBoxOpen = true;
+                                    MessageBox.Show(err, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    isMessageBoxOpen=false;
+                                }
+                                isMessageBoxOpen = false;
+                            }
+                            listBoxAras.Items.Add(err);
+                        }
 
                         Task.Run(() =>
                         {
@@ -718,7 +747,6 @@ namespace Yer_İstasyonu_Yazılımı
                                 gMap.Invalidate();
                             }));
                         });
-
                     }
                 }
                 int waitTime = 1000;

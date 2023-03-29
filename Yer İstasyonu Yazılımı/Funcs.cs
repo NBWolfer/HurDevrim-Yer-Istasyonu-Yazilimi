@@ -101,7 +101,7 @@ namespace Yer_İstasyonu_Yazılımı
             {
                 err += " Ayrılma gerçekleşmedi !";
             }
-            return err + " "+"<"+DataSplit(param)[3]+">";
+            return "x" + code[4] +err + " " + "<" + DataSplit(param)[3] + ">";
         }
         public async static Task<DataTable> ReadCSV(string filePath) => await Task.Run(() =>
         {
