@@ -42,21 +42,6 @@ namespace Yer_İstasyonu_Yazılımı
             }
         }
 
-        //public static string[] DataSplit(string param)
-        //{
-        //    string[] outputs= new string[22];
-        //    string[] parts = param.Split(new char[] { '<', '>', ',', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-        //    outputs = parts.Select(p => p.Trim()).ToArray();
-        //    for (int i = 0; i < parts.Length; i++)
-        //    {
-        //        outputs[i] = parts[i].Trim();
-        //        if (outputs[i] == "")
-        //        {
-        //            outputs[i] = " ";
-        //        }
-        //    }
-        //    return outputs;
-        //}
         public static List<string> DataSplit(string packet)
         {
             List<string> data = new List<string>();
@@ -91,6 +76,7 @@ namespace Yer_İstasyonu_Yazılımı
             
             dgw.Invoke(new Action(() => { dgw.Rows.Add(dgvr); })); 
         }
+
         public static string ARAS(string param)
         {
             char[] code = DataSplit(param)[3].ToCharArray();

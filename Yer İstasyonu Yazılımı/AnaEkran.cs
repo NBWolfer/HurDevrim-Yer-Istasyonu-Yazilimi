@@ -33,7 +33,9 @@ namespace Yer_İstasyonu_Yazılımı
             {
                 cmBPorts.Items.Add(port);
             }
-            listBox1.Items.Add("Bağlı Değil");
+            lblStat.Text = "Bağlı Değil";
+            axWindowsMediaPlayer1.URL = "http://192.168.137.190:8160";
+            axWindowsMediaPlayer1.uiMode = "none";
         }
         private void TimerIntervals()
         {
@@ -689,7 +691,7 @@ namespace Yer_İstasyonu_Yazılımı
                             row++;
                         });
 
-                        listBox1.Invoke(new Action(() => { listBox1.Items.Add(data); }));
+                        lblStat.Invoke(new Action(() => { lblStat.Text="Bağlı"; }));
 
                         string[] gyro = { dataGridView1.Rows[rowGyro].Cells[19].Value.ToString(), dataGridView1.Rows[rowGyro].Cells[20].Value.ToString(), dataGridView1.Rows[rowGyro].Cells[21].Value.ToString()};
                         x = float.Parse(gyro[0]);
@@ -729,7 +731,7 @@ namespace Yer_İstasyonu_Yazılımı
             catch(Exception ex)
             {
                 MessageBox.Show("Veri alma/işleme hatası: \n"+ex, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                listBox1.Invoke(new Action(()=> { listBox1.Items[0] = "Bağlantı Hatası, Bağlantı Kesildi."; }));
+                lblStat.Invoke(new Action(() => { lblStat.Text = "Bağlantı Hatası, Bağlantı Kesildi."; }));
                 serialPort.Close();
             }
         }
@@ -748,7 +750,7 @@ namespace Yer_İstasyonu_Yazılımı
                 serialPort.StopBits = StopBits.One; // stop bits
                 serialPort.DataReceived += new SerialDataReceivedEventHandler(serialPort_DataReceived);
                 serialPort.Open();
-                listBox1.Items[0] = "Bağlandı";
+                lblStat.Text = "Bağlandı";
             }
             else
             {
@@ -819,26 +821,16 @@ namespace Yer_İstasyonu_Yazılımı
                     }
                 } while (!dosyaGonderildi);
             });
-
-
-            //SaveFileDialog openFileDialog1 = new SaveFileDialog
-            //{
-            //    Filter = "(*.avi) | *.avi | (*.mp4) | *.mp4",
-            //    Title = "Gönderilecek Dosyayı Seçin"
-            //};
-            //if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            //{
-            //    File.WriteAllBytes(openFileDialog1.FileName, data);
-            //}
         }
         private void btnCutcon_Click(object sender, EventArgs e)
         {
             serialPort.Close();
-            listBox1.Items[0] = "Bağlantı Kesildi";
+            lblStat.Text = "Bağlantı Kesildi";
         }
         // Map
         private GMarkerGoogle markerPayload;
         private GMarkerGoogle markerCarrier;
+
         private void gMap_Load(object sender, EventArgs e)
         {
             GMaps.Instance.Mode = AccessMode.ServerAndCache;
