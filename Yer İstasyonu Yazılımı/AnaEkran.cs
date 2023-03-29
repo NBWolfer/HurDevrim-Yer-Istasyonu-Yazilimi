@@ -8,13 +8,9 @@ using GMap.NET;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using GMap.NET.WindowsForms.Markers;
-using GMap.NET.WindowsForms;
 using System.IO.Ports;
 using GMap.NET.MapProviders;
-using System.Threading;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 
 namespace Yer_İstasyonu_Yazılımı
 {
@@ -27,14 +23,12 @@ namespace Yer_İstasyonu_Yazılımı
         }
         private void AnaEkran_Load(object sender, EventArgs e)
         {
-            Funcs.TabloDuzen(dataGridView1);
             TimerIntervals();
             foreach(string port in ports)
             {
                 cmBPorts.Items.Add(port);
             }
             lblStat.Text = "Bağlı Değil";
-            axWindowsMediaPlayer1.URL = "http://192.168.137.190:8160";
             axWindowsMediaPlayer1.uiMode = "none";
         }
         private void TimerIntervals()
@@ -644,7 +638,12 @@ namespace Yer_İstasyonu_Yazılımı
                 serialPort.StopBits = StopBits.One; // stop bits
                 serialPort.DataReceived += new SerialDataReceivedEventHandler(serialPort_DataReceived);
                 serialPort.Open();
+                dataGridView1.DataSource = null;
+                dataGridView1.Columns.Clear();
+                Funcs.TabloDuzen(dataGridView1);
                 lblStat.Text = "Bağlandı";
+                axWindowsMediaPlayer1.URL = "http://192.168.137.190:8160";
+                axWindowsMediaPlayer1.uiMode = "none";
             }
             else
             {
@@ -721,10 +720,10 @@ namespace Yer_İstasyonu_Yazılımı
             serialPort.Close();
             lblStat.Text = "Bağlantı Kesildi";
         }
+
         // Map
         private GMarkerGoogle markerPayload;
         private GMarkerGoogle markerCarrier;
-
         private void gMap_Load(object sender, EventArgs e)
         {
             GMaps.Instance.Mode = AccessMode.ServerAndCache;
@@ -736,5 +735,4 @@ namespace Yer_İstasyonu_Yazılımı
             gMap.ShowCenter = false;
         }
     }
-
 }

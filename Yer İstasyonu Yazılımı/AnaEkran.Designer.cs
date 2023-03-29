@@ -66,6 +66,8 @@
             this.chPressure = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chAltidute = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.listBoxAras = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.gMap = new GMap.NET.WindowsForms.GMapControl();
             this.label6 = new System.Windows.Forms.Label();
             this.btnFileSender = new System.Windows.Forms.Button();
@@ -98,8 +100,6 @@
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.timerGraphs = new System.Windows.Forms.Timer(this.components);
             this.timerMap = new System.Windows.Forms.Timer(this.components);
-            this.listBoxAras = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chPackageNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chSpeed)).BeginInit();
@@ -312,6 +312,27 @@
             this.tabPage1.Text = "Genel";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // listBoxAras
+            // 
+            this.listBoxAras.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.listBoxAras.FormattingEnabled = true;
+            this.listBoxAras.ItemHeight = 17;
+            this.listBoxAras.Location = new System.Drawing.Point(93, 677);
+            this.listBoxAras.Margin = new System.Windows.Forms.Padding(2);
+            this.listBoxAras.Name = "listBoxAras";
+            this.listBoxAras.Size = new System.Drawing.Size(552, 259);
+            this.listBoxAras.TabIndex = 25;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(15, 677);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 22);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "ARAS :";
+            // 
             // gMap
             // 
             this.gMap.Bearing = 0F;
@@ -339,6 +360,7 @@
             this.gMap.TabIndex = 18;
             this.gMap.TabStop = false;
             this.gMap.Zoom = 0D;
+            this.gMap.Load += new System.EventHandler(this.gMap_Load);
             // 
             // label6
             // 
@@ -682,42 +704,9 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "HürDevrim Yer İstasyonu Yazılımı";
             // 
-            // timerX
-            // 
-            this.timerX.Tick += new System.EventHandler(this.timerX_Tick);
-            // 
             // serialPort
             // 
             this.serialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort_DataReceived);
-            // 
-            // timerGraphs
-            // 
-            this.timerGraphs.Tick += new System.EventHandler(this.timerGraphs_Tick);
-            // 
-            // timerMap
-            // 
-            this.timerMap.Tick += new System.EventHandler(this.timerMap_Tick);
-            // 
-            // listBoxAras
-            // 
-            this.listBoxAras.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.listBoxAras.FormattingEnabled = true;
-            this.listBoxAras.ItemHeight = 17;
-            this.listBoxAras.Location = new System.Drawing.Point(93, 677);
-            this.listBoxAras.Margin = new System.Windows.Forms.Padding(2);
-            this.listBoxAras.Name = "listBoxAras";
-            this.listBoxAras.Size = new System.Drawing.Size(552, 259);
-            this.listBoxAras.TabIndex = 25;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(15, 677);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 22);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "ARAS :";
             // 
             // AnaEkran
             // 
