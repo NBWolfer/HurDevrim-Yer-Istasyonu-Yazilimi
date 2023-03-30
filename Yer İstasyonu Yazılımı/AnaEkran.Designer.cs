@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title13 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title14 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title15 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title16 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend17 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title17 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title18 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaEkran));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.chPackageNum = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -66,16 +66,22 @@
             this.chPressure = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chAltidute = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.pnlAras = new System.Windows.Forms.Panel();
+            this.pnlAras5 = new System.Windows.Forms.Panel();
+            this.pnlAras4 = new System.Windows.Forms.Panel();
+            this.pnlAras3 = new System.Windows.Forms.Panel();
+            this.pnlAras2 = new System.Windows.Forms.Panel();
+            this.pnlAras1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.listBoxAras = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.gMap = new GMap.NET.WindowsForms.GMapControl();
@@ -111,12 +117,6 @@
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.timerGraphs = new System.Windows.Forms.Timer(this.components);
             this.timerMap = new System.Windows.Forms.Timer(this.components);
-            this.pnlAras = new System.Windows.Forms.Panel();
-            this.pnlAras1 = new System.Windows.Forms.Panel();
-            this.pnlAras2 = new System.Windows.Forms.Panel();
-            this.pnlAras3 = new System.Windows.Forms.Panel();
-            this.pnlAras4 = new System.Windows.Forms.Panel();
-            this.pnlAras5 = new System.Windows.Forms.Panel();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chPackageNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chSpeed)).BeginInit();
@@ -125,18 +125,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.chPressure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chAltidute)).BeginInit();
             this.tabPage1.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlAras.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.pnlAras.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -147,178 +147,172 @@
             this.tabPage2.Controls.Add(this.chBatteryVolt);
             this.tabPage2.Controls.Add(this.chPressure);
             this.tabPage2.Controls.Add(this.chAltidute);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(2525, 1197);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(1892, 970);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Grafikler";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // chPackageNum
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chPackageNum.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chPackageNum.Legends.Add(legend1);
-            this.chPackageNum.Location = new System.Drawing.Point(1724, 602);
-            this.chPackageNum.Margin = new System.Windows.Forms.Padding(4);
+            chartArea13.Name = "ChartArea1";
+            this.chPackageNum.ChartAreas.Add(chartArea13);
+            legend13.Name = "Legend1";
+            this.chPackageNum.Legends.Add(legend13);
+            this.chPackageNum.Location = new System.Drawing.Point(1293, 489);
             this.chPackageNum.Name = "chPackageNum";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series1.Legend = "Legend1";
-            series1.LegendText = "Paket";
-            series1.Name = "seriesPayload";
-            this.chPackageNum.Series.Add(series1);
-            this.chPackageNum.Size = new System.Drawing.Size(752, 575);
+            series17.ChartArea = "ChartArea1";
+            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series17.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series17.Legend = "Legend1";
+            series17.LegendText = "Paket";
+            series17.Name = "seriesPayload";
+            this.chPackageNum.Series.Add(series17);
+            this.chPackageNum.Size = new System.Drawing.Size(564, 467);
             this.chPackageNum.TabIndex = 7;
             this.chPackageNum.Text = "chart2";
-            title1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            title1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            title1.Name = "Title1";
-            title1.Text = "Paket Sayısı";
-            this.chPackageNum.Titles.Add(title1);
+            title13.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title13.Name = "Title1";
+            title13.Text = "Paket Sayısı";
+            this.chPackageNum.Titles.Add(title13);
             // 
             // chSpeed
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chSpeed.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chSpeed.Legends.Add(legend2);
-            this.chSpeed.Location = new System.Drawing.Point(873, 602);
-            this.chSpeed.Margin = new System.Windows.Forms.Padding(4);
+            chartArea14.Name = "ChartArea1";
+            this.chSpeed.ChartAreas.Add(chartArea14);
+            legend14.Name = "Legend1";
+            this.chSpeed.Legends.Add(legend14);
+            this.chSpeed.Location = new System.Drawing.Point(655, 489);
             this.chSpeed.Name = "chSpeed";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series2.Legend = "Legend1";
-            series2.LegendText = "Görev Yükü";
-            series2.Name = "seriesPayload";
-            this.chSpeed.Series.Add(series2);
-            this.chSpeed.Size = new System.Drawing.Size(752, 575);
+            series18.ChartArea = "ChartArea1";
+            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series18.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series18.Legend = "Legend1";
+            series18.LegendText = "Görev Yükü";
+            series18.Name = "seriesPayload";
+            this.chSpeed.Series.Add(series18);
+            this.chSpeed.Size = new System.Drawing.Size(564, 467);
             this.chSpeed.TabIndex = 6;
             this.chSpeed.Text = "chart2";
-            title2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            title2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            title2.Name = "Title1";
-            title2.Text = "İniş Hızı";
-            this.chSpeed.Titles.Add(title2);
+            title14.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title14.Name = "Title1";
+            title14.Text = "İniş Hızı";
+            this.chSpeed.Titles.Add(title14);
             // 
             // chTempurature
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chTempurature.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chTempurature.Legends.Add(legend3);
-            this.chTempurature.Location = new System.Drawing.Point(19, 602);
-            this.chTempurature.Margin = new System.Windows.Forms.Padding(4);
+            chartArea15.Name = "ChartArea1";
+            this.chTempurature.ChartAreas.Add(chartArea15);
+            legend15.Name = "Legend1";
+            this.chTempurature.Legends.Add(legend15);
+            this.chTempurature.Location = new System.Drawing.Point(14, 489);
             this.chTempurature.Name = "chTempurature";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series3.Legend = "Legend1";
-            series3.LegendText = "Görev Yükü";
-            series3.Name = "seriesPayload";
-            this.chTempurature.Series.Add(series3);
-            this.chTempurature.Size = new System.Drawing.Size(752, 575);
+            series19.ChartArea = "ChartArea1";
+            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series19.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series19.Legend = "Legend1";
+            series19.LegendText = "Görev Yükü";
+            series19.Name = "seriesPayload";
+            this.chTempurature.Series.Add(series19);
+            this.chTempurature.Size = new System.Drawing.Size(564, 467);
             this.chTempurature.TabIndex = 5;
             this.chTempurature.Text = "chart2";
-            title3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            title3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            title3.Name = "Title1";
-            title3.Text = "Sıcaklık";
-            this.chTempurature.Titles.Add(title3);
+            title15.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title15.Name = "Title1";
+            title15.Text = "Sıcaklık";
+            this.chTempurature.Titles.Add(title15);
             // 
             // chBatteryVolt
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chBatteryVolt.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chBatteryVolt.Legends.Add(legend4);
-            this.chBatteryVolt.Location = new System.Drawing.Point(1724, 20);
-            this.chBatteryVolt.Margin = new System.Windows.Forms.Padding(4);
+            chartArea16.Name = "ChartArea1";
+            this.chBatteryVolt.ChartAreas.Add(chartArea16);
+            legend16.Name = "Legend1";
+            this.chBatteryVolt.Legends.Add(legend16);
+            this.chBatteryVolt.Location = new System.Drawing.Point(1293, 16);
             this.chBatteryVolt.Name = "chBatteryVolt";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series4.Legend = "Legend1";
-            series4.LegendText = "Görev Yükü";
-            series4.Name = "seriesPayload";
-            this.chBatteryVolt.Series.Add(series4);
-            this.chBatteryVolt.Size = new System.Drawing.Size(752, 575);
+            series20.ChartArea = "ChartArea1";
+            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series20.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series20.Legend = "Legend1";
+            series20.LegendText = "Görev Yükü";
+            series20.Name = "seriesPayload";
+            this.chBatteryVolt.Series.Add(series20);
+            this.chBatteryVolt.Size = new System.Drawing.Size(564, 467);
             this.chBatteryVolt.TabIndex = 4;
             this.chBatteryVolt.Text = "chart2";
-            title4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            title4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            title4.Name = "Title1";
-            title4.Text = "Pil Gerilimi";
-            this.chBatteryVolt.Titles.Add(title4);
+            title16.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title16.Name = "Title1";
+            title16.Text = "Pil Gerilimi";
+            this.chBatteryVolt.Titles.Add(title16);
             // 
             // chPressure
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chPressure.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chPressure.Legends.Add(legend5);
-            this.chPressure.Location = new System.Drawing.Point(873, 20);
-            this.chPressure.Margin = new System.Windows.Forms.Padding(4);
+            chartArea17.Name = "ChartArea1";
+            this.chPressure.ChartAreas.Add(chartArea17);
+            legend17.Name = "Legend1";
+            this.chPressure.Legends.Add(legend17);
+            this.chPressure.Location = new System.Drawing.Point(655, 16);
             this.chPressure.Name = "chPressure";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series5.Legend = "Legend1";
-            series5.LegendText = "Görev Yükü";
-            series5.Name = "seriesPayload";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series6.Legend = "Legend1";
-            series6.LegendText = "Taşıyıcı";
-            series6.Name = "seriesCarrier";
-            this.chPressure.Series.Add(series5);
-            this.chPressure.Series.Add(series6);
-            this.chPressure.Size = new System.Drawing.Size(752, 575);
+            series21.ChartArea = "ChartArea1";
+            series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series21.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series21.Legend = "Legend1";
+            series21.LegendText = "Görev Yükü";
+            series21.Name = "seriesPayload";
+            series22.ChartArea = "ChartArea1";
+            series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series22.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series22.Legend = "Legend1";
+            series22.LegendText = "Taşıyıcı";
+            series22.Name = "seriesCarrier";
+            this.chPressure.Series.Add(series21);
+            this.chPressure.Series.Add(series22);
+            this.chPressure.Size = new System.Drawing.Size(564, 467);
             this.chPressure.TabIndex = 3;
             this.chPressure.Text = "chart2";
-            title5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            title5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            title5.Name = "Title1";
-            title5.Text = "Basınç";
-            this.chPressure.Titles.Add(title5);
+            title17.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title17.Name = "Title1";
+            title17.Text = "Basınç";
+            this.chPressure.Titles.Add(title17);
             // 
             // chAltidute
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chAltidute.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chAltidute.Legends.Add(legend6);
-            this.chAltidute.Location = new System.Drawing.Point(19, 20);
-            this.chAltidute.Margin = new System.Windows.Forms.Padding(4);
+            chartArea18.Name = "ChartArea1";
+            this.chAltidute.ChartAreas.Add(chartArea18);
+            legend18.Name = "Legend1";
+            this.chAltidute.Legends.Add(legend18);
+            this.chAltidute.Location = new System.Drawing.Point(14, 16);
             this.chAltidute.Name = "chAltidute";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series7.Legend = "Legend1";
-            series7.LegendText = "Görev Yükü";
-            series7.Name = "seriesPayload";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series8.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series8.Legend = "Legend1";
-            series8.LegendText = "Taşıyıcı";
-            series8.Name = "seriesCarrier";
-            this.chAltidute.Series.Add(series7);
-            this.chAltidute.Series.Add(series8);
-            this.chAltidute.Size = new System.Drawing.Size(752, 575);
+            series23.ChartArea = "ChartArea1";
+            series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series23.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series23.Legend = "Legend1";
+            series23.LegendText = "Görev Yükü";
+            series23.Name = "seriesPayload";
+            series24.ChartArea = "ChartArea1";
+            series24.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series24.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series24.Legend = "Legend1";
+            series24.LegendText = "Taşıyıcı";
+            series24.Name = "seriesCarrier";
+            this.chAltidute.Series.Add(series23);
+            this.chAltidute.Series.Add(series24);
+            this.chAltidute.Size = new System.Drawing.Size(564, 467);
             this.chAltidute.TabIndex = 2;
             this.chAltidute.Text = "Yükseklik";
-            title6.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            title6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            title6.Name = "Title1";
-            title6.Text = "Yükseklik";
-            this.chAltidute.Titles.Add(title6);
+            title18.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            title18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            title18.Name = "Title1";
+            title18.Text = "Yükseklik";
+            this.chAltidute.Titles.Add(title18);
             // 
             // tabPage1
             // 
@@ -333,134 +327,194 @@
             this.tabPage1.Controls.Add(this.lblPaketNum);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(2525, 1197);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(1892, 970);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Genel";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // panel6
+            // pnlAras
             // 
-            this.panel6.BackColor = System.Drawing.Color.LightGray;
-            this.panel6.Controls.Add(this.label12);
-            this.panel6.Location = new System.Drawing.Point(293, 12);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(68, 57);
-            this.panel6.TabIndex = 27;
+            this.pnlAras.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlAras.BackColor = System.Drawing.Color.DarkCyan;
+            this.pnlAras.Controls.Add(this.pnlAras5);
+            this.pnlAras.Controls.Add(this.pnlAras4);
+            this.pnlAras.Controls.Add(this.pnlAras3);
+            this.pnlAras.Controls.Add(this.pnlAras2);
+            this.pnlAras.Controls.Add(this.pnlAras1);
+            this.pnlAras.Controls.Add(this.panel2);
+            this.pnlAras.Controls.Add(this.panel3);
+            this.pnlAras.Controls.Add(this.panel4);
+            this.pnlAras.Controls.Add(this.panel5);
+            this.pnlAras.Controls.Add(this.panel6);
+            this.pnlAras.Location = new System.Drawing.Point(19, 710);
+            this.pnlAras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAras.Name = "pnlAras";
+            this.pnlAras.Size = new System.Drawing.Size(278, 116);
+            this.pnlAras.TabIndex = 28;
             // 
-            // label12
+            // pnlAras5
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label12.Location = new System.Drawing.Point(20, 16);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(25, 26);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "5";
+            this.pnlAras5.Location = new System.Drawing.Point(220, 61);
+            this.pnlAras5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAras5.Name = "pnlAras5";
+            this.pnlAras5.Size = new System.Drawing.Size(51, 46);
+            this.pnlAras5.TabIndex = 28;
             // 
-            // panel5
+            // pnlAras4
             // 
-            this.panel5.BackColor = System.Drawing.Color.LightGray;
-            this.panel5.Controls.Add(this.label11);
-            this.panel5.Location = new System.Drawing.Point(221, 12);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(68, 57);
-            this.panel5.TabIndex = 27;
+            this.pnlAras4.Location = new System.Drawing.Point(166, 61);
+            this.pnlAras4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAras4.Name = "pnlAras4";
+            this.pnlAras4.Size = new System.Drawing.Size(51, 46);
+            this.pnlAras4.TabIndex = 30;
             // 
-            // label11
+            // pnlAras3
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.Location = new System.Drawing.Point(22, 16);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(25, 26);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "4";
+            this.pnlAras3.Location = new System.Drawing.Point(112, 61);
+            this.pnlAras3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAras3.Name = "pnlAras3";
+            this.pnlAras3.Size = new System.Drawing.Size(51, 46);
+            this.pnlAras3.TabIndex = 29;
             // 
-            // panel4
+            // pnlAras2
             // 
-            this.panel4.BackColor = System.Drawing.Color.LightGray;
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Location = new System.Drawing.Point(150, 12);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(68, 57);
-            this.panel4.TabIndex = 28;
+            this.pnlAras2.Location = new System.Drawing.Point(59, 61);
+            this.pnlAras2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAras2.Name = "pnlAras2";
+            this.pnlAras2.Size = new System.Drawing.Size(51, 46);
+            this.pnlAras2.TabIndex = 28;
             // 
-            // label10
+            // pnlAras1
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(21, 16);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(25, 26);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "3";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LightGray;
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(79, 12);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(68, 57);
-            this.panel3.TabIndex = 27;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(22, 16);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(25, 26);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "2";
+            this.pnlAras1.Location = new System.Drawing.Point(6, 61);
+            this.pnlAras1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAras1.Name = "pnlAras1";
+            this.pnlAras1.Size = new System.Drawing.Size(51, 46);
+            this.pnlAras1.TabIndex = 27;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightGray;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(255)))), ((int)(((byte)(218)))));
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(8, 12);
+            this.panel2.Location = new System.Drawing.Point(6, 10);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(68, 57);
+            this.panel2.Size = new System.Drawing.Size(51, 46);
             this.panel2.TabIndex = 26;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(23, 16);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(17, 13);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(25, 26);
+            this.label8.Size = new System.Drawing.Size(21, 22);
             this.label8.TabIndex = 25;
             this.label8.Text = "1";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(255)))), ((int)(((byte)(218)))));
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Location = new System.Drawing.Point(59, 10);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(51, 46);
+            this.panel3.TabIndex = 27;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.Location = new System.Drawing.Point(16, 13);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(21, 22);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "2";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(255)))), ((int)(((byte)(218)))));
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Location = new System.Drawing.Point(112, 10);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(51, 46);
+            this.panel4.TabIndex = 28;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.Location = new System.Drawing.Point(16, 13);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(21, 22);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "3";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(255)))), ((int)(((byte)(218)))));
+            this.panel5.Controls.Add(this.label11);
+            this.panel5.Location = new System.Drawing.Point(166, 10);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(51, 46);
+            this.panel5.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.Location = new System.Drawing.Point(16, 13);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(21, 22);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "4";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(255)))), ((int)(((byte)(218)))));
+            this.panel6.Controls.Add(this.label12);
+            this.panel6.Location = new System.Drawing.Point(220, 10);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(51, 46);
+            this.panel6.TabIndex = 27;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label12.Location = new System.Drawing.Point(15, 13);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(21, 22);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "5";
             // 
             // listBoxAras
             // 
             this.listBoxAras.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.listBoxAras.FormattingEnabled = true;
-            this.listBoxAras.ItemHeight = 22;
-            this.listBoxAras.Location = new System.Drawing.Point(433, 841);
-            this.listBoxAras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBoxAras.ItemHeight = 17;
+            this.listBoxAras.Location = new System.Drawing.Point(325, 683);
+            this.listBoxAras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxAras.Name = "listBoxAras";
-            this.listBoxAras.Size = new System.Drawing.Size(735, 334);
+            this.listBoxAras.Size = new System.Drawing.Size(552, 259);
             this.listBoxAras.TabIndex = 25;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(20, 833);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(15, 677);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 26);
+            this.label5.Size = new System.Drawing.Size(73, 22);
             this.label5.TabIndex = 24;
             this.label5.Text = "ARAS :";
             // 
@@ -472,8 +526,8 @@
             this.gMap.GrayScaleMode = false;
             this.gMap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMap.LevelsKeepInMemory = 5;
-            this.gMap.Location = new System.Drawing.Point(1972, 668);
-            this.gMap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gMap.Location = new System.Drawing.Point(1479, 543);
+            this.gMap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gMap.MarkersEnabled = true;
             this.gMap.MaxZoom = 2;
             this.gMap.MinZoom = 2;
@@ -487,7 +541,7 @@
             this.gMap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMap.ShowTileGridLines = false;
-            this.gMap.Size = new System.Drawing.Size(544, 507);
+            this.gMap.Size = new System.Drawing.Size(408, 412);
             this.gMap.TabIndex = 18;
             this.gMap.TabStop = false;
             this.gMap.Zoom = 0D;
@@ -497,20 +551,19 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(20, 690);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(15, 561);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(179, 26);
+            this.label6.Size = new System.Drawing.Size(151, 22);
             this.label6.TabIndex = 17;
             this.label6.Text = "Dosya İşlemleri :";
             // 
             // btnFileSender
             // 
             this.btnFileSender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnFileSender.Location = new System.Drawing.Point(689, 682);
-            this.btnFileSender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFileSender.Location = new System.Drawing.Point(517, 554);
+            this.btnFileSender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFileSender.Name = "btnFileSender";
-            this.btnFileSender.Size = new System.Drawing.Size(171, 44);
+            this.btnFileSender.Size = new System.Drawing.Size(128, 36);
             this.btnFileSender.TabIndex = 16;
             this.btnFileSender.Text = "Dosya Gönder";
             this.btnFileSender.UseVisualStyleBackColor = true;
@@ -519,10 +572,10 @@
             // csvload
             // 
             this.csvload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.csvload.Location = new System.Drawing.Point(465, 682);
-            this.csvload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.csvload.Location = new System.Drawing.Point(349, 554);
+            this.csvload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.csvload.Name = "csvload";
-            this.csvload.Size = new System.Drawing.Size(171, 44);
+            this.csvload.Size = new System.Drawing.Size(128, 36);
             this.csvload.TabIndex = 13;
             this.csvload.Text = ".csv yükle";
             this.csvload.UseVisualStyleBackColor = true;
@@ -531,10 +584,10 @@
             // csvSave
             // 
             this.csvSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.csvSave.Location = new System.Drawing.Point(255, 682);
-            this.csvSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.csvSave.Location = new System.Drawing.Point(191, 554);
+            this.csvSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.csvSave.Name = "csvSave";
-            this.csvSave.Size = new System.Drawing.Size(171, 44);
+            this.csvSave.Size = new System.Drawing.Size(128, 36);
             this.csvSave.TabIndex = 12;
             this.csvSave.Text = ".csv kaydet";
             this.csvSave.UseVisualStyleBackColor = true;
@@ -544,20 +597,18 @@
             // 
             this.lblPaketNum.AutoSize = true;
             this.lblPaketNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblPaketNum.Location = new System.Drawing.Point(273, 747);
-            this.lblPaketNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPaketNum.Location = new System.Drawing.Point(205, 607);
             this.lblPaketNum.Name = "lblPaketNum";
-            this.lblPaketNum.Size = new System.Drawing.Size(0, 26);
+            this.lblPaketNum.Size = new System.Drawing.Size(0, 22);
             this.lblPaketNum.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(20, 747);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(15, 607);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(223, 26);
+            this.label7.Size = new System.Drawing.Size(184, 22);
             this.label7.TabIndex = 1;
             this.label7.Text = "Toplam Paket Sayısı :";
             // 
@@ -570,26 +621,25 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 18);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 15);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -599,7 +649,7 @@
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(2497, 644);
+            this.dataGridView1.Size = new System.Drawing.Size(1873, 523);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabControl1
@@ -607,12 +657,12 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(15, 90);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl1.Location = new System.Drawing.Point(11, 73);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(2533, 1226);
+            this.tabControl1.Size = new System.Drawing.Size(1900, 996);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.TabStop = false;
             // 
@@ -633,11 +683,11 @@
             this.tabPage4.Controls.Add(this.label1);
             this.tabPage4.Controls.Add(this.Port);
             this.tabPage4.Controls.Add(this.connectCom);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage4.Size = new System.Drawing.Size(2525, 1197);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Size = new System.Drawing.Size(1892, 970);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Durum ve Bağlantı";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -645,10 +695,10 @@
             // btnAyır
             // 
             this.btnAyır.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAyır.Location = new System.Drawing.Point(1036, 171);
-            this.btnAyır.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAyır.Location = new System.Drawing.Point(777, 139);
+            this.btnAyır.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAyır.Name = "btnAyır";
-            this.btnAyır.Size = new System.Drawing.Size(171, 44);
+            this.btnAyır.Size = new System.Drawing.Size(128, 36);
             this.btnAyır.TabIndex = 27;
             this.btnAyır.Text = "Ayır";
             this.btnAyır.UseVisualStyleBackColor = true;
@@ -658,7 +708,6 @@
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(21, 211);
-            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(4);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(1076, 516);
@@ -668,26 +717,28 @@
             // 
             this.lblStat.AutoSize = true;
             this.lblStat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblStat.Location = new System.Drawing.Point(764, 191);
+            this.lblStat.Location = new System.Drawing.Point(573, 155);
+            this.lblStat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStat.Name = "lblStat";
-            this.lblStat.Size = new System.Drawing.Size(0, 25);
+            this.lblStat.Size = new System.Drawing.Size(0, 20);
             this.lblStat.TabIndex = 21;
             // 
             // lblPortStat
             // 
             this.lblPortStat.AutoSize = true;
             this.lblPortStat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblPortStat.Location = new System.Drawing.Point(487, 110);
+            this.lblPortStat.Location = new System.Drawing.Point(365, 89);
+            this.lblPortStat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPortStat.Name = "lblPortStat";
-            this.lblPortStat.Size = new System.Drawing.Size(0, 25);
+            this.lblPortStat.Size = new System.Drawing.Size(0, 20);
             this.lblPortStat.TabIndex = 20;
             // 
             // btnCutcon
             // 
-            this.btnCutcon.Location = new System.Drawing.Point(377, 182);
-            this.btnCutcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCutcon.Location = new System.Drawing.Point(283, 148);
+            this.btnCutcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCutcon.Name = "btnCutcon";
-            this.btnCutcon.Size = new System.Drawing.Size(171, 44);
+            this.btnCutcon.Size = new System.Drawing.Size(128, 36);
             this.btnCutcon.TabIndex = 19;
             this.btnCutcon.Text = "Bağlantı Kes";
             this.btnCutcon.UseVisualStyleBackColor = true;
@@ -696,20 +747,19 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Yer_İstasyonu_Yazılımı.Properties.Resources.Icon;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 977);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 794);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 201);
+            this.pictureBox1.Size = new System.Drawing.Size(162, 163);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
             // btnPortScan
             // 
-            this.btnPortScan.Location = new System.Drawing.Point(348, 101);
-            this.btnPortScan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPortScan.Location = new System.Drawing.Point(261, 82);
+            this.btnPortScan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPortScan.Name = "btnPortScan";
-            this.btnPortScan.Size = new System.Drawing.Size(112, 41);
+            this.btnPortScan.Size = new System.Drawing.Size(84, 33);
             this.btnPortScan.TabIndex = 17;
             this.btnPortScan.Text = "Port Tara";
             this.btnPortScan.UseVisualStyleBackColor = true;
@@ -719,19 +769,20 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(583, 191);
+            this.label2.Location = new System.Drawing.Point(437, 155);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 25);
+            this.label2.Size = new System.Drawing.Size(132, 20);
             this.label2.TabIndex = 16;
             this.label2.Text = "Bağlantı Durumu:";
             // 
             // glControl
             // 
             this.glControl.BackColor = System.Drawing.Color.LightBlue;
-            this.glControl.Location = new System.Drawing.Point(1741, 53);
-            this.glControl.Margin = new System.Windows.Forms.Padding(5);
+            this.glControl.Location = new System.Drawing.Point(1306, 43);
+            this.glControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.glControl.Name = "glControl";
-            this.glControl.Size = new System.Drawing.Size(752, 843);
+            this.glControl.Size = new System.Drawing.Size(564, 685);
             this.glControl.TabIndex = 15;
             this.glControl.VSync = false;
             this.glControl.Load += new System.EventHandler(this.glControl_Load);
@@ -741,38 +792,39 @@
             // 
             this.cmBPorts.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmBPorts.FormattingEnabled = true;
-            this.cmBPorts.Location = new System.Drawing.Point(152, 101);
-            this.cmBPorts.Margin = new System.Windows.Forms.Padding(4);
+            this.cmBPorts.Location = new System.Drawing.Point(114, 82);
             this.cmBPorts.Name = "cmBPorts";
-            this.cmBPorts.Size = new System.Drawing.Size(171, 39);
+            this.cmBPorts.Size = new System.Drawing.Size(129, 33);
             this.cmBPorts.TabIndex = 13;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(23, 937);
+            this.label3.Location = new System.Drawing.Point(17, 761);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 24);
+            this.label3.Size = new System.Drawing.Size(121, 19);
             this.label3.TabIndex = 12;
             this.label3.Text = "Takım Bilgileri:";
             // 
             // txtBandRate
             // 
             this.txtBandRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtBandRate.Location = new System.Drawing.Point(152, 44);
-            this.txtBandRate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBandRate.Location = new System.Drawing.Point(114, 36);
+            this.txtBandRate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBandRate.Name = "txtBandRate";
-            this.txtBandRate.Size = new System.Drawing.Size(171, 38);
+            this.txtBandRate.Size = new System.Drawing.Size(129, 32);
             this.txtBandRate.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(23, 53);
+            this.label1.Location = new System.Drawing.Point(17, 43);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 25);
+            this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Band Rate :";
             // 
@@ -780,18 +832,19 @@
             // 
             this.Port.AutoSize = true;
             this.Port.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Port.Location = new System.Drawing.Point(87, 110);
+            this.Port.Location = new System.Drawing.Point(65, 89);
+            this.Port.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Port.Name = "Port";
-            this.Port.Size = new System.Drawing.Size(58, 25);
+            this.Port.Size = new System.Drawing.Size(46, 20);
             this.Port.TabIndex = 5;
             this.Port.Text = "Port :";
             // 
             // connectCom
             // 
-            this.connectCom.Location = new System.Drawing.Point(153, 182);
-            this.connectCom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.connectCom.Location = new System.Drawing.Point(115, 148);
+            this.connectCom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.connectCom.Name = "connectCom";
-            this.connectCom.Size = new System.Drawing.Size(171, 44);
+            this.connectCom.Size = new System.Drawing.Size(128, 36);
             this.connectCom.TabIndex = 4;
             this.connectCom.Text = "Bağlan";
             this.connectCom.UseVisualStyleBackColor = true;
@@ -804,9 +857,8 @@
             this.panel1.Controls.Add(this.btnQuit);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2571, 54);
+            this.panel1.Size = new System.Drawing.Size(1928, 44);
             this.panel1.TabIndex = 1;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -818,10 +870,9 @@
             this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnMinimize.Location = new System.Drawing.Point(2387, 11);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMinimize.Location = new System.Drawing.Point(1790, 9);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(81, 33);
+            this.btnMinimize.Size = new System.Drawing.Size(61, 27);
             this.btnMinimize.TabIndex = 3;
             this.btnMinimize.Text = "Küçült";
             this.btnMinimize.UseVisualStyleBackColor = true;
@@ -833,10 +884,9 @@
             this.btnQuit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
             this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnQuit.Location = new System.Drawing.Point(2489, 11);
-            this.btnQuit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQuit.Location = new System.Drawing.Point(1867, 9);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(56, 33);
+            this.btnQuit.Size = new System.Drawing.Size(42, 27);
             this.btnQuit.TabIndex = 2;
             this.btnQuit.Text = "Çık";
             this.btnQuit.UseVisualStyleBackColor = true;
@@ -846,10 +896,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(12, 10);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(9, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(385, 35);
+            this.label4.Size = new System.Drawing.Size(300, 29);
             this.label4.TabIndex = 0;
             this.label4.Text = "HürDevrim Yer İstasyonu Yazılımı";
             // 
@@ -857,73 +906,18 @@
             // 
             this.serialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort_DataReceived);
             // 
-            // pnlAras
-            // 
-            this.pnlAras.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlAras.BackColor = System.Drawing.Color.DimGray;
-            this.pnlAras.Controls.Add(this.pnlAras5);
-            this.pnlAras.Controls.Add(this.pnlAras4);
-            this.pnlAras.Controls.Add(this.pnlAras3);
-            this.pnlAras.Controls.Add(this.pnlAras2);
-            this.pnlAras.Controls.Add(this.pnlAras1);
-            this.pnlAras.Controls.Add(this.panel2);
-            this.pnlAras.Controls.Add(this.panel3);
-            this.pnlAras.Controls.Add(this.panel4);
-            this.pnlAras.Controls.Add(this.panel5);
-            this.pnlAras.Controls.Add(this.panel6);
-            this.pnlAras.Location = new System.Drawing.Point(25, 862);
-            this.pnlAras.Name = "pnlAras";
-            this.pnlAras.Size = new System.Drawing.Size(369, 143);
-            this.pnlAras.TabIndex = 28;
-            // 
-            // pnlAras1
-            // 
-            this.pnlAras1.Location = new System.Drawing.Point(8, 75);
-            this.pnlAras1.Name = "pnlAras1";
-            this.pnlAras1.Size = new System.Drawing.Size(68, 57);
-            this.pnlAras1.TabIndex = 27;
-            // 
-            // pnlAras2
-            // 
-            this.pnlAras2.Location = new System.Drawing.Point(79, 75);
-            this.pnlAras2.Name = "pnlAras2";
-            this.pnlAras2.Size = new System.Drawing.Size(68, 57);
-            this.pnlAras2.TabIndex = 28;
-            // 
-            // pnlAras3
-            // 
-            this.pnlAras3.Location = new System.Drawing.Point(150, 75);
-            this.pnlAras3.Name = "pnlAras3";
-            this.pnlAras3.Size = new System.Drawing.Size(68, 57);
-            this.pnlAras3.TabIndex = 29;
-            // 
-            // pnlAras4
-            // 
-            this.pnlAras4.Location = new System.Drawing.Point(221, 75);
-            this.pnlAras4.Name = "pnlAras4";
-            this.pnlAras4.Size = new System.Drawing.Size(68, 57);
-            this.pnlAras4.TabIndex = 30;
-            // 
-            // pnlAras5
-            // 
-            this.pnlAras5.Location = new System.Drawing.Point(293, 75);
-            this.pnlAras5.Name = "pnlAras5";
-            this.pnlAras5.Size = new System.Drawing.Size(68, 57);
-            this.pnlAras5.TabIndex = 28;
-            // 
             // AnaEkran
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(2560, 1329);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AnaEkran";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HürDevrim";
@@ -937,16 +931,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.chAltidute)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnlAras.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
@@ -955,7 +950,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.pnlAras.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

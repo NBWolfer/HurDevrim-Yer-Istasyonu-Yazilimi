@@ -467,12 +467,13 @@ namespace Yer_İstasyonu_Yazılımı
                     if (Regex.IsMatch(data, "^<[0-9]+>, <[0-9]+>, <[0-9]+>, <[0-9]+/[0-9]+/[0-9]+,[0-9]+/[0-9]+/[0-9]+>, <[0-9]+>, <[0-9]+||[ ]>, <[0-9]+\\.[0-9]+>, <[0-9]\\.[0-9]+||[ ]>, <[0-9]\\.[0-9]+||[ ]>, <[[0-9]+-9]+\\.[0-9]+>, [0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+||[ ]>, <[0-9]+\\.[0-9]+||[ ]>, <[0-9]+\\.[0-9]+||\b>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>,$"))
                     {
                         Funcs.AddRow(dataGridView1, Funcs.DataSplit(data).ToArray());
-                        
+                        if (dataGridView1.RowCount > 0)
+                        {
+                            dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.RowCount - 1;
+                        }
                         Task.Run(() =>
                         { 
-                            int dataCount = chAltidute.Series[0].Points.Count;
-                            Random r = new Random();
-                            int temp = r.Next(0, 100);
+                            int dataCount = 0;
                             int interval = 1;
                             time++;
                             if (dataCount > 10)
@@ -490,6 +491,10 @@ namespace Yer_İstasyonu_Yazılımı
                             if (dataCount > 200)
                             {
                                 interval = 50;
+                            }
+                            if (dataCount > 300)
+                            {
+                                interval = 100;
                             }
 
                             chAltidute.Invoke(new Action(() =>
@@ -553,10 +558,9 @@ namespace Yer_İstasyonu_Yazılımı
                             {
                                 chPackageNum.ChartAreas[0].AxisX.Interval = interval;
                                 chPackageNum.ChartAreas[0].AxisX.Title = "Zaman(sn)";
-                                chPackageNum.ChartAreas[0].AxisY.Title = "Paket Sayısı(Adet)";
+                                chPackageNum.ChartAreas[0].AxisY.Title = "İrtifa Farkı(m/sn)";
                                 chPackageNum.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
-
-                                chPackageNum.Series[0].Points.AddXY(time, Funcs.DataSplit(data).ToArray()[0]);
+                                chPackageNum.Series[0].Points.AddXY(time, Funcs.DataSplit(data).ToArray()[8]);
                                 chPackageNum.Invalidate();
                                 chPackageNum.ResetAutoValues();
                             }));
@@ -575,51 +579,47 @@ namespace Yer_İstasyonu_Yazılımı
                         string err = Funcs.ARAS(data);
                         if (err != "")
                         {
-                            //if (!isMessageBoxOpen)
-                            //{
-                            //    isMessageBoxOpen = true;
-                            //    if (err[1] == 1)
-                            //    {
-                            //        DialogResult dR = MessageBox.Show("Otomatik ayrılma gerçekleşemedi!", "Hata", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                            //        if (dR == DialogResult.Yes)
-                            //        {
-                            //            serialPort.WriteLine("/servo");
-                            //            isMessageBoxOpen = false;
-                            //        }
-                            //        else
-                            //        {
-                            //            isMessageBoxOpen = false;
-                            //        }
-                            //    }
-                            //    if (!isMessageBoxOpen)
-                            //    {
-                            //        isMessageBoxOpen = true;
-                            //        MessageBox.Show(err, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            //        isMessageBoxOpen = false;
-                            //    }
-                            //    isMessageBoxOpen = false;
-                            //}
                             if (err[1] == 1)
                             {
                                 pnlAras1.BackColor = Color.Red;
+                            }
+                            else
+                            {
+                                pnlAras1.BackColor = Color.Green;
                             }
                             if (err[2] == 1)
                             {
                                 pnlAras2.BackColor = Color.Red;
                             }
+                            else
+                            {
+                                pnlAras2.BackColor= Color.Green;
+                            }
                             if (err[3] == 1)
                             {
                                 pnlAras3.BackColor = Color.Red;
+                            }
+                            else
+                            {
+                                pnlAras3.BackColor = Color.Green;
                             }
                             if (err[4] == 1)
                             {
                                 pnlAras4.BackColor = Color.Red;
                             }
+                            else
+                            {
+                                pnlAras4.BackColor = Color.Green;
+                            }
                             if (err[5] == 1)
                             {
                                 pnlAras5.BackColor = Color.Red;
                             }
-                            listBoxAras.Invoke(new Action(() => { listBoxAras.Items.Add(err); }));
+                            else
+                            {
+                                pnlAras5.BackColor = Color.Green;
+                            }
+                            listBoxAras.Invoke(new Action(() => { listBoxAras.SelectedIndex = listBoxAras.Items.Count-1; listBoxAras.TopIndex= listBoxAras.Items.Count-1; listBoxAras.Items.Add(err); }));
                         }
 
                         Task.Run(() =>
