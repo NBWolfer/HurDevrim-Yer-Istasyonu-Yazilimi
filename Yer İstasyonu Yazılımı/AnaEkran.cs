@@ -30,6 +30,12 @@ namespace Yer_İstasyonu_Yazılımı
             }
             lblStat.Text = "Bağlı Değil";
             axWindowsMediaPlayer1.uiMode = "none";
+            axWindowsMediaPlayer1.URL = "192.168.137.90";
+            Panel[] panels = { pnlAras1, pnlAras2, pnlAras3, pnlAras4, pnlAras5 };
+            foreach(var panel in panels)
+            {
+                panel.BackColor = Color.CornflowerBlue;
+            }
         }
         private void TimerIntervals()
         {
@@ -461,6 +467,7 @@ namespace Yer_İstasyonu_Yazılımı
                     if (Regex.IsMatch(data, "^<[0-9]+>, <[0-9]+>, <[0-9]+>, <[0-9]+/[0-9]+/[0-9]+,[0-9]+/[0-9]+/[0-9]+>, <[0-9]+>, <[0-9]+||[ ]>, <[0-9]+\\.[0-9]+>, <[0-9]\\.[0-9]+||[ ]>, <[0-9]\\.[0-9]+||[ ]>, <[[0-9]+-9]+\\.[0-9]+>, [0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+||[ ]>, <[0-9]+\\.[0-9]+||[ ]>, <[0-9]+\\.[0-9]+||\b>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>, <[0-9]+\\.[0-9]+>,$"))
                     {
                         Funcs.AddRow(dataGridView1, Funcs.DataSplit(data).ToArray());
+                        
                         Task.Run(() =>
                         { 
                             int dataCount = chAltidute.Series[0].Points.Count;
@@ -492,8 +499,8 @@ namespace Yer_İstasyonu_Yazılımı
                                 chAltidute.ChartAreas[0].AxisY.Title = "Yükseklik(m)";
                                 chAltidute.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
-                                chAltidute.Series[0].Points.AddXY(time, dataGridView1.Rows[row].Cells[6].Value); //Funcs.parameters[6]); // Veriyi grafiğe ekle
-                                chAltidute.Series[1].Points.AddXY(time, dataGridView1.Rows[row].Cells[7].Value); //Funcs.parameters[7]); // Veriyi grafiğe ekle
+                                chAltidute.Series[0].Points.AddXY(time, Funcs.DataSplit(data).ToArray()[6]); //Funcs.parameters[6]); // Veriyi grafiğe ekle
+                                chAltidute.Series[1].Points.AddXY(time, Funcs.DataSplit(data).ToArray()[7]); //Funcs.parameters[7]); // Veriyi grafiğe ekle
                                 chAltidute.Invalidate();
                                 chAltidute.ResetAutoValues();
                             }));
@@ -504,7 +511,7 @@ namespace Yer_İstasyonu_Yazılımı
                                 chBatteryVolt.ChartAreas[0].AxisY.Title = "Volt(V)";
                                 chBatteryVolt.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
-                                chBatteryVolt.Series[0].Points.AddXY(time, dataGridView1.Rows[row].Cells[11].Value); // Funcs.parameters[11]);
+                                chBatteryVolt.Series[0].Points.AddXY(time, Funcs.DataSplit(data).ToArray()[11]); // Funcs.parameters[11]);
                                 chBatteryVolt.Invalidate();
                                 chBatteryVolt.ResetAutoValues();
                             }));
@@ -515,8 +522,8 @@ namespace Yer_İstasyonu_Yazılımı
                                 chPressure.ChartAreas[0].AxisY.Title = "Basınç(Pa)";
                                 chPressure.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
-                                chPressure.Series[0].Points.AddXY(time, dataGridView1.Rows[row].Cells[4].Value); // Func.parameters[4]);
-                                chPressure.Series[1].Points.AddXY(time, dataGridView1.Rows[row].Cells[5].Value); // Func.parameters[5]);
+                                chPressure.Series[0].Points.AddXY(time, Funcs.DataSplit(data).ToArray()[4]); // Func.parameters[4]);
+                                chPressure.Series[1].Points.AddXY(time, Funcs.DataSplit(data).ToArray()[5]); // Func.parameters[5]);
                                 chPressure.Invalidate();
                                 chPressure.ResetAutoValues();
                             }));
@@ -527,7 +534,7 @@ namespace Yer_İstasyonu_Yazılımı
                                 chTempurature.ChartAreas[0].AxisY.Title = "Derece(℃)";
                                 chTempurature.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
-                                chTempurature.Series[0].Points.AddXY(time, dataGridView1.Rows[row].Cells[10].Value); // Func.parameters[10]);
+                                chTempurature.Series[0].Points.AddXY(time, Funcs.DataSplit(data).ToArray()[10]); // Func.parameters[10]);
                                 chTempurature.Invalidate();
                                 chTempurature.ResetAutoValues();
                             }));
@@ -538,7 +545,7 @@ namespace Yer_İstasyonu_Yazılımı
                                 chSpeed.ChartAreas[0].AxisY.Title = "Hız(m/sn)";
                                 chSpeed.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
-                                chSpeed.Series[0].Points.AddXY(time, dataGridView1.Rows[row].Cells[9].Value); // Func.parameters[9]);
+                                chSpeed.Series[0].Points.AddXY(time, Funcs.DataSplit(data).ToArray()[9]); // Func.parameters[9]);
                                 chSpeed.Invalidate();
                                 chSpeed.ResetAutoValues();
                             }));
@@ -549,7 +556,7 @@ namespace Yer_İstasyonu_Yazılımı
                                 chPackageNum.ChartAreas[0].AxisY.Title = "Paket Sayısı(Adet)";
                                 chPackageNum.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12);
 
-                                chPackageNum.Series[0].Points.AddXY(time, dataGridView1.Rows[row].Cells[0].Value);
+                                chPackageNum.Series[0].Points.AddXY(time, Funcs.DataSplit(data).ToArray()[0]);
                                 chPackageNum.Invalidate();
                                 chPackageNum.ResetAutoValues();
                             }));
@@ -568,31 +575,51 @@ namespace Yer_İstasyonu_Yazılımı
                         string err = Funcs.ARAS(data);
                         if (err != "")
                         {
-                            if(!isMessageBoxOpen)
+                            //if (!isMessageBoxOpen)
+                            //{
+                            //    isMessageBoxOpen = true;
+                            //    if (err[1] == 1)
+                            //    {
+                            //        DialogResult dR = MessageBox.Show("Otomatik ayrılma gerçekleşemedi!", "Hata", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                            //        if (dR == DialogResult.Yes)
+                            //        {
+                            //            serialPort.WriteLine("/servo");
+                            //            isMessageBoxOpen = false;
+                            //        }
+                            //        else
+                            //        {
+                            //            isMessageBoxOpen = false;
+                            //        }
+                            //    }
+                            //    if (!isMessageBoxOpen)
+                            //    {
+                            //        isMessageBoxOpen = true;
+                            //        MessageBox.Show(err, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            //        isMessageBoxOpen = false;
+                            //    }
+                            //    isMessageBoxOpen = false;
+                            //}
+                            if (err[1] == 1)
                             {
-                                isMessageBoxOpen = true;
-                                if (err[1] == 1)
-                                {
-                                    DialogResult dR =MessageBox.Show("Otomatik ayrılma gerçekleşemedi!","Hata",MessageBoxButtons.YesNo,MessageBoxIcon.Error);
-                                    if(dR == DialogResult.Yes)
-                                    {
-                                        serialPort.WriteLine("/servo");
-                                        isMessageBoxOpen = false;
-                                    }
-                                    else
-                                    {
-                                        isMessageBoxOpen = false;
-                                    }
-                                }
-                                if(!isMessageBoxOpen)
-                                {
-                                    isMessageBoxOpen = true;
-                                    MessageBox.Show(err, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    isMessageBoxOpen=false;
-                                }
-                                isMessageBoxOpen = false;
+                                pnlAras1.BackColor = Color.Red;
                             }
-                            listBoxAras.Items.Add(err);
+                            if (err[2] == 1)
+                            {
+                                pnlAras2.BackColor = Color.Red;
+                            }
+                            if (err[3] == 1)
+                            {
+                                pnlAras3.BackColor = Color.Red;
+                            }
+                            if (err[4] == 1)
+                            {
+                                pnlAras4.BackColor = Color.Red;
+                            }
+                            if (err[5] == 1)
+                            {
+                                pnlAras5.BackColor = Color.Red;
+                            }
+                            listBoxAras.Invoke(new Action(() => { listBoxAras.Items.Add(err); }));
                         }
 
                         Task.Run(() =>
@@ -637,13 +664,28 @@ namespace Yer_İstasyonu_Yazılımı
                 serialPort.DataBits = 8; // data bits
                 serialPort.StopBits = StopBits.One; // stop bits
                 serialPort.DataReceived += new SerialDataReceivedEventHandler(serialPort_DataReceived);
-                serialPort.Open();
-                dataGridView1.DataSource = null;
-                dataGridView1.Columns.Clear();
-                Funcs.TabloDuzen(dataGridView1);
-                lblStat.Text = "Bağlandı";
-                axWindowsMediaPlayer1.URL = "http://192.168.137.190:8160";
-                axWindowsMediaPlayer1.uiMode = "none";
+                try
+                {
+                    serialPort.Open();
+                }
+                catch
+                {
+                    MessageBox.Show("Bağlanılamadı!","Hata",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
+                }
+                if (serialPort.IsOpen)
+                {
+                    dataGridView1.DataSource = null;
+                    dataGridView1.Columns.Clear();
+                    Funcs.TabloDuzen(dataGridView1);
+                    lblStat.Text = "Bağlandı";
+                    axWindowsMediaPlayer1.URL = "http://192.168.137.190:8160";
+                    axWindowsMediaPlayer1.uiMode = "none";
+                    Panel[] panels = { pnlAras1, pnlAras2, pnlAras3, pnlAras4, pnlAras5 };
+                    foreach(var panel in panels)
+                    {
+                        panel.BackColor = Color.Green;
+                    }
+                }
             }
             else
             {
@@ -731,9 +773,6 @@ namespace Yer_İstasyonu_Yazılımı
         }
         // Map
         private GMarkerGoogle markerPayload;
-
- 
-
         private GMarkerGoogle markerCarrier;
         private void gMap_Load(object sender, EventArgs e)
         {

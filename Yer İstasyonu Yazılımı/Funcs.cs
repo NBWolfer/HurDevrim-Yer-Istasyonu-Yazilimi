@@ -79,7 +79,7 @@ namespace Yer_İstasyonu_Yazılımı
 
         public static string ARAS(string param)
         {
-            char[] code = DataSplit(param)[3].ToCharArray();
+            char[] code = DataSplit(param)[2].ToCharArray();
             string err = "";
             if (code[0]==1)
             {
@@ -101,7 +101,7 @@ namespace Yer_İstasyonu_Yazılımı
             {
                 err += " Ayrılma gerçekleşmedi !";
             }
-            return "x" + code[4] +err + " " + "<" + DataSplit(param)[3] + ">";
+            return "<" + DataSplit(param)[2] + ">"+err + " ";
         }
     }
 }
